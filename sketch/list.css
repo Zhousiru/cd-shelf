@@ -1,0 +1,38 @@
+.container {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.cd-side,
+.detail-side {
+  overflow-y: scroll;
+  height: 100vh;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.cd-side {
+  padding: 200px;
+}
+
+.detail-side {
+  padding-block: 200px;
+}
+
+.cd-side::-webkit-scrollbar,
+.detail-side::-webkit-scrollbar {
+  display: none;
+}
+
+.cd-container {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  align-items: flex-end;
+}
+
+.detail-card {
+  background-color: #fff;
+  padding: 3rem;
+}
