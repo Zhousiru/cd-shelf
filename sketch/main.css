@@ -68,35 +68,3 @@ body {
 .cd-case:hover > .case-mask {
   filter: brightness(1.1);
 }
-
-/*** Scroll Mask ***/
-.scroll-mask {
-  position: fixed;
-  top: 0;
-  inset-inline: 0;
-  height: 100vh;
-  pointer-events: none;
-  box-sizing: border-box;
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.8),
-    transparent 5%,
-    transparent 95%,
-    rgba(0, 0, 0, 0.8)
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.8),
-    transparent 5%,
-    transparent 95%,
-    rgba(0, 0, 0, 0.8)
-  );
-}
-
-.scroll-mask.bg {
-  background-color: rgb(241, 242, 243);
-}
-
-.scroll-mask.blur {
-  backdrop-filter: blur(10px);
-}
