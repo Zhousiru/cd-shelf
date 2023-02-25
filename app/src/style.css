@@ -1,0 +1,11 @@
+:root {
+  --card-border-radius: 5px;
+}
+
+body {
+  background-color: rgb(241, 242, 243);
+}
+
+::selection {
+  background-color: rgba(180, 180, 180, 0.5);
+}
