@@ -1,33 +1,57 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
+import { throttle } from 'lodash-es'
 import CDCase from '../components/CDCase.vue'
 
-const elPlayerCardContent = ref<HTMLDivElement | null>(null)
+const elCDCases = ref<Array<InstanceType<typeof CDCase>> | null>(null)
+const elNavbar = ref<HTMLDivElement | null>(null)
 const navWidth = ref('0px')
+const navbarFloating = ref(false)
 
-function adjustNav() {
-  if (!elPlayerCardContent.value) return
+const adjustNavWidth = throttle(() => {
+  if (!elCDCases.value) return
+
+  const first: HTMLDivElement = elCDCases.value[0].$el
 
   const width =
     document.documentElement.clientWidth -
-    elPlayerCardContent.value.getClientRects()[0].left * 2
+    first.getBoundingClientRect().left * 2
 
   navWidth.value = width + 'px'
-}
+}, 200)
+
+const adjustNavFloating = throttle(() => {
+  if (!elNavbar.value) return
+
+  const top = elNavbar.value.getBoundingClientRect().top
+
+  if (top > 20) {
+    navbarFloating.value = false
+  } else {
+    navbarFloating.value = true
+  }
+}, 200)
 
 onMounted(() => {
-  adjustNav()
-  window.addEventListener('resize', adjustNav)
+  adjustNavWidth()
+  window.addEventListener('resize', adjustNavWidth)
+  window.addEventListener('scroll', adjustNavFloating)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('resize', adjustNav)
+  window.removeEventListener('resize', adjustNavWidth)
+  window.removeEventListener('scroll', adjustNavFloating)
 })
 </script>
 
 <template>
   <div class="container">
-    <nav :style="{ width: navWidth }" class="navbar">
+    <nav
+      :style="{ width: navWidth }"
+      class="navbar"
+      :class="{ float: navbarFloating }"
+      ref="elNavbar"
+    >
       <div class="title">
         <div class="sup">指针的</div>
         <div>CD 架</div>
@@ -35,17 +59,12 @@ onUnmounted(() => {
       <div></div>
     </nav>
     <div class="cd-container">
-      <div class="player-card">
-        <div class="shadow">
-          <div class="bg"></div>
-        </div>
-        <div class="content" ref="elPlayerCardContent">Player</div>
-      </div>
       <!-- Debug Data -->
       <CDCase
         class="cd-case"
         v-for="i in 10"
         :album-art="`http://127.0.0.1:8000/album${(i % 5) + 1}.jpg`"
+        ref="elCDCases"
       ></CDCase>
     </div>
   </div>
@@ -57,19 +76,28 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-block: 10vh;
+  padding-block: 20vh;
   box-sizing: border-box;
 }
 
 .navbar {
   height: 100px;
   background-color: #fff;
-  margin-top: 10vh;
   display: flex;
   padding: 1em;
   box-sizing: border-box;
   align-items: center;
   border-radius: var(--card-border-radius);
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+  transition: background-color 0.2s;
+  border: rgba(30, 30, 30, 0.2) 1px solid;
+}
+
+.navbar.float {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar > .title {
@@ -92,53 +120,8 @@ onUnmounted(() => {
   margin-top: clamp(50px, 5vw, 100px);
 }
 
-.cd-case,
-.player-card {
+.cd-case {
   width: 400px;
-}
-
-.player-card {
-  aspect-ratio: 10 / 9;
-  position: relative;
-}
-
-.player-card > div {
-  position: absolute;
-  inset: 6px;
-}
-
-.player-card > .content {
-  background-color: #fff;
-  border-radius: var(--card-border-radius);
-}
-
-.player-card > .shadow {
-  filter: blur(80px);
-  transform: scale(0.75);
-  border-radius: 50px;
-  overflow: hidden;
-  opacity: 0.8;
-}
-
-.player-card > .shadow > .bg {
-  background-image: linear-gradient(
-    103.3deg,
-    rgba(252, 225, 208, 1) 30%,
-    rgba(255, 173, 214, 1) 55.7%,
-    rgba(162, 186, 245, 1) 81.8%
-  );
-  inset: 0;
-  position: absolute;
-  animation: spin 10s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: scale(1.4) rotate(0deg);
-  }
-  to {
-    transform: scale(1.4) rotate(360deg);
-  }
 }
 
 @media (max-width: 450px) {
@@ -146,32 +129,8 @@ onUnmounted(() => {
     grid-template-columns: repeat(auto-fill, 320px);
   }
 
-  .cd-case,
-  .player-card {
+  .cd-case {
     width: 320px;
   }
-  .player-card > div {
-    position: absolute;
-    inset: 4px;
-  }
-}
-
-.sidebar {
-  background-color: #fff;
-  width: 120px;
-  height: 500px;
-  position: fixed;
-  left: 10vw;
-  top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  gap: 1rem;
-}
-
-.sidebar .title {
-  padding: 0;
 }
 </style>
