@@ -56,7 +56,26 @@ onUnmounted(() => {
         <div class="sup">指针的</div>
         <div>CD 架</div>
       </div>
-      <div></div>
+      <div class="playing">
+        <div
+          class="cover"
+          style="background-image: url(http://127.0.0.1:8000/album3.jpg)"
+        ></div>
+        <button class="control">
+          <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+        <button class="control">
+          <span class="material-symbols-outlined">skip_next</span>
+        </button>
+        <button class="info" translate="no">
+          <div class="title">雲上の桜花道</div>
+          <div class="album-info">
+            <div class="album">桜花爛漫</div>
+            <div class="dot"></div>
+            <div class="artist">Sound Refil</div>
+          </div>
+        </button>
+      </div>
     </nav>
     <div class="cd-container">
       <!-- Debug Data -->
@@ -93,6 +112,7 @@ onUnmounted(() => {
   z-index: 10;
   transition: background-color 0.2s;
   border: rgba(30, 30, 30, 0.2) 1px solid;
+  overflow: hidden;
 }
 
 .navbar.float {
@@ -103,11 +123,94 @@ onUnmounted(() => {
 .navbar > .title {
   font-size: 2rem;
   color: rgba(0, 0, 0, 0.8);
+  flex: 1;
 }
 
 .navbar > .title > .sup {
   color: rgba(0, 0, 0, 0.5);
   font-size: 1rem;
+}
+
+.playing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.playing > .control {
+  display: flex;
+  gap: 5px;
+}
+
+.playing > .control {
+  background-color: transparent;
+  border: none;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.playing > .control:hover {
+  background-color: rgba(30, 30, 30, 0.1);
+}
+
+.playing > .cover {
+  position: absolute;
+  background-size: cover;
+  inset-block: 0;
+  left: 60%;
+  right: 0;
+  filter: blur(40px);
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1)
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.playing .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: background-color 0.2s;
+  padding: 10px;
+  border-radius: var(--card-border-radius);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.playing .info:hover {
+  background-color: rgba(30, 30, 30, 0.1);
+}
+
+.playing .info > .title {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.playing .album-info {
+  opacity: 0.5;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.playing .album-info .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #000;
 }
 
 .cd-container {
@@ -131,6 +234,10 @@ onUnmounted(() => {
 
   .cd-case {
     width: 320px;
+  }
+
+  .playing > .control {
+    display: none;
   }
 }
 </style>
