@@ -1,3 +1,3 @@
-import GridVue from './views/grid.vue'
+import GridVue from './views/Grid.vue'
 
 export default [{ path: '/', component: GridVue }]

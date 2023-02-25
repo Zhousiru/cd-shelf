@@ -2,26 +2,17 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import CDCase from '../components/CDCase.vue'
 
-const elGrid = ref<HTMLDivElement | null>(null)
+const elPlayerCardContent = ref<HTMLDivElement | null>(null)
 const navWidth = ref('0px')
 
 function adjustNav() {
-  if (!elGrid.value) return
+  if (!elPlayerCardContent.value) return
 
-  const extract = (s: string) =>
-    s
-      .split(' ')
-      .map((pxStr) => Number(pxStr.slice(0, -2)))
-      .reduce((a, b) => a + b)
+  const width =
+    document.documentElement.clientWidth -
+    elPlayerCardContent.value.getClientRects()[0].left * 2
 
-  const computedStyle = window.getComputedStyle(elGrid.value)
-
-  const colCount = computedStyle.gridTemplateColumns.split(' ').length
-  const colItemWidth = extract(computedStyle.gridTemplateColumns)
-  const colGapWidth = extract(computedStyle.columnGap) * (colCount - 1)
-  const offset = colCount * -3
-
-  navWidth.value = colItemWidth + colGapWidth + offset + 'px'
+  navWidth.value = width + 'px'
 }
 
 onMounted(() => {
@@ -43,12 +34,12 @@ onUnmounted(() => {
       </div>
       <div></div>
     </nav>
-    <div class="cd-container" ref="elGrid">
-      <div class="player-card" ref="elIntroCard">
+    <div class="cd-container">
+      <div class="player-card">
         <div class="shadow">
           <div class="bg"></div>
         </div>
-        <div class="content">Player</div>
+        <div class="content" ref="elPlayerCardContent">Player</div>
       </div>
       <!-- Debug Data -->
       <CDCase
