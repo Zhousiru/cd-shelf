@@ -227,6 +227,16 @@ onUnmounted(() => {
   width: 400px;
 }
 
+@media (max-width: 950px) {
+  .cd-container {
+    grid-template-columns: repeat(auto-fill, clamp(420px, 60vw, 100vw));
+  }
+
+  .cd-case {
+    width: clamp(420px, 60vw, 100vw);
+  }
+}
+
 @media (max-width: 450px) {
   .cd-container {
     grid-template-columns: repeat(auto-fill, 320px);
