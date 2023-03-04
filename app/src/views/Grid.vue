@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { throttle } from 'lodash-es'
+import { PlayArrowRound, SkipNextRound } from '@vicons/material'
+import { Icon } from '@vicons/utils'
 import CDCase from '../components/CDCase.vue'
 
 const elCDCases = ref<Array<InstanceType<typeof CDCase>> | null>(null)
 const elNavbar = ref<HTMLDivElement | null>(null)
-const navWidth = ref('0px')
-const navbarFloating = ref(false)
 
-const adjustNavWidth = throttle(() => {
+const navWidth = ref('0px')
+
+function adjustNavWidth() {
   if (!elCDCases.value) return
 
   const first: HTMLDivElement = elCDCases.value[0].$el
@@ -18,40 +19,21 @@ const adjustNavWidth = throttle(() => {
     first.getBoundingClientRect().left * 2
 
   navWidth.value = width + 'px'
-}, 200)
-
-const adjustNavFloating = throttle(() => {
-  if (!elNavbar.value) return
-
-  const top = elNavbar.value.getBoundingClientRect().top
-
-  if (top > 20) {
-    navbarFloating.value = false
-  } else {
-    navbarFloating.value = true
-  }
-}, 200)
+}
 
 onMounted(() => {
   adjustNavWidth()
   window.addEventListener('resize', adjustNavWidth)
-  window.addEventListener('scroll', adjustNavFloating)
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', adjustNavWidth)
-  window.removeEventListener('scroll', adjustNavFloating)
 })
 </script>
 
 <template>
   <div class="container">
-    <nav
-      :style="{ width: navWidth }"
-      class="navbar"
-      :class="{ float: navbarFloating }"
-      ref="elNavbar"
-    >
+    <nav :style="{ width: navWidth }" class="navbar" ref="elNavbar">
       <div class="title">
         <div class="sup">指针的</div>
         <div>CD 架</div>
@@ -62,10 +44,14 @@ onUnmounted(() => {
           style="background-image: url(http://127.0.0.1:8000/album3.jpg)"
         ></div>
         <button class="control">
-          <span class="material-symbols-outlined">play_arrow</span>
+          <Icon :size="24">
+            <PlayArrowRound />
+          </Icon>
         </button>
         <button class="control">
-          <span class="material-symbols-outlined">skip_next</span>
+          <Icon :size="24">
+            <SkipNextRound />
+          </Icon>
         </button>
         <button class="info" translate="no">
           <div class="title">雲上の桜花道</div>
@@ -101,7 +87,8 @@ onUnmounted(() => {
 
 .navbar {
   height: 100px;
-  background-color: #fff;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   padding: 1em;
   box-sizing: border-box;
@@ -113,11 +100,6 @@ onUnmounted(() => {
   transition: background-color 0.2s;
   border: rgba(30, 30, 30, 0.2) 1px solid;
   overflow: hidden;
-}
-
-.navbar.float {
-  backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar > .title {
