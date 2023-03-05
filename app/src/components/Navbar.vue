@@ -39,16 +39,18 @@ function hidePlayer() {
           class="blur-cover"
           style="background-image: url(http://127.0.0.1:8000/album3.jpg)"
         ></div>
-        <button class="control">
-          <Icon :size="24">
-            <PlayArrowRound />
-          </Icon>
-        </button>
-        <button class="control">
-          <Icon :size="24">
-            <SkipNextRound />
-          </Icon>
-        </button>
+        <div class="control-area" :class="{ visible: !playerVisibility }">
+          <button class="control">
+            <Icon :size="24">
+              <PlayArrowRound />
+            </Icon>
+          </button>
+          <button class="control">
+            <Icon :size="24">
+              <SkipNextRound />
+            </Icon>
+          </button>
+        </div>
         <button
           class="expand-info"
           @mouseenter="showPlayer"
@@ -192,6 +194,21 @@ button.control {
     opacity: 0.8;
   }
 
+  .control-area {
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5%);
+    transition: all 0.2s;
+
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
   button.control {
     @media screen and (max-width: 450px) {
       display: none;
@@ -236,9 +253,11 @@ button.control {
   backdrop-filter: blur($backdrop-blur);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.2s;
+  transform: translateY(-5%) scale(0.95);
+  transition: all 0.2s;
 
   &.visible {
+    transform: translateY(0) scale(1);
     pointer-events: all;
     opacity: 1;
   }
@@ -269,7 +288,7 @@ button.control {
   }
 
   button.control {
-    height: 40px;
+    height: 42px;
   }
 }
 </style>
