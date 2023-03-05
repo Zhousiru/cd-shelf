@@ -28,6 +28,7 @@ function hidePlayer() {
 </script>
 
 <template>
+  <div class="overlay" :class="{ visible: playerVisibility }"></div>
   <div class="navbar" :style="{ width: `${width}px` }">
     <nav>
       <div class="site-title">
@@ -114,7 +115,7 @@ $text-color: rgba(0, 0, 0, 0.8);
 .navbar {
   position: sticky;
   top: 20px;
-  z-index: 10;
+  z-index: 100;
 }
 
 nav {
@@ -244,7 +245,7 @@ button.control {
 .player {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.9);
-  z-index: 100;
+  z-index: 90;
   right: 0;
   margin-top: 10px;
   border-radius: $border-radius;
@@ -289,6 +290,22 @@ button.control {
 
   button.control {
     height: 42px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  backdrop-filter: grayscale(0.8) blur(2px);
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 </style>
