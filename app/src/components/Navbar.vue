@@ -9,6 +9,22 @@ import { ref } from 'vue'
 
 const { width } = defineProps<{ width: number }>()
 const playerVisibility = ref(false)
+
+let timerId: number | null = null
+
+function showPlayer() {
+  if (timerId) {
+    clearTimeout(timerId)
+  }
+
+  playerVisibility.value = true
+}
+
+function hidePlayer() {
+  timerId = setTimeout(() => {
+    playerVisibility.value = false
+  }, 250)
+}
 </script>
 
 <template>
@@ -35,7 +51,8 @@ const playerVisibility = ref(false)
         </button>
         <button
           class="expand-info"
-          @click="playerVisibility = !playerVisibility"
+          @mouseenter="showPlayer"
+          @mouseleave="hidePlayer"
         >
           <div class="play-info" translate="no">
             <div class="title">雲上の桜花道</div>
@@ -48,7 +65,12 @@ const playerVisibility = ref(false)
         </button>
       </div>
     </nav>
-    <div class="player" :class="{ visible: playerVisibility }">
+    <div
+      class="player"
+      :class="{ visible: playerVisibility }"
+      @mouseenter="showPlayer"
+      @mouseleave="hidePlayer"
+    >
       <img src="http://127.0.0.1:8000/album3.jpg" />
       <div class="content">
         <div class="play-info">

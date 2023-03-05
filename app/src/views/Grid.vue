@@ -14,8 +14,6 @@ function setNavbarWidth() {
   navbarWidth.value =
     document.documentElement.clientWidth -
     first.getBoundingClientRect().left * 2
-
-  console.log(navbarWidth.value)
 }
 
 onMounted(() => {
