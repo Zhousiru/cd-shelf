@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 
 import App from './App.vue'
-import './style.css'
+import './style.scss'
 import 'normalize.css'
 
 const router = createRouter({

@@ -1,11 +1,14 @@
-:root {
-  --card-border-radius: 5px;
-}
+$text-color: rgba(0, 0, 0, 0.8);
 
 body {
   background-color: rgb(241, 242, 243);
+  color: $text-color;
   padding: 0;
   margin: 0;
+}
+
+button {
+  color: $text-color;
 }
 
 ::selection {
