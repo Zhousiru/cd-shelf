@@ -29,7 +29,11 @@ function hidePlayer() {
 </script>
 
 <template>
-  <div class="overlay" :class="{ visible: playerVisibility }"></div>
+  <div
+    class="overlay"
+    :class="{ visible: playerVisibility }"
+    @click="playerVisibility = false"
+  ></div>
   <div class="navbar" :style="{ width: `${width}px` }">
     <nav>
       <div class="site-title">
