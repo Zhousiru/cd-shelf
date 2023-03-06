@@ -5,9 +5,10 @@ import {
   SkipPreviousRound,
 } from '@vicons/material'
 import { Icon } from '@vicons/utils'
-import { ref } from 'vue'
+import { inject, ref } from 'vue'
+import { gridContentWidth } from '../providers'
 
-const { width } = defineProps<{ width: number }>()
+const width = inject(gridContentWidth, ref(0))
 const playerVisibility = ref(false)
 
 let timerId: number | null = null
