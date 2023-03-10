@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import CDCase from '../components/CDCase.vue'
 import Navbar from '../components/Navbar.vue'
+
+const router = useRouter()
+
+function handleCDClick(cdID: string) {
+  router.push({
+    name: 'detail',
+    params: {
+      id: cdID,
+    },
+  })
+}
 </script>
 
 <template>
@@ -10,10 +21,9 @@ import Navbar from '../components/Navbar.vue'
     <div class="grid-container">
       <!-- Debug Data -->
       <CDCase
-        class="cd-case"
         v-for="i in 10"
         :album-art="`http://127.0.0.1:8000/album${(i % 5) + 1}.jpg`"
-        ref="elCDCases"
+        @click="handleCDClick(i.toString())"
       />
     </div>
   </div>

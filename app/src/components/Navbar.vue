@@ -8,6 +8,15 @@ import { Icon } from '@vicons/utils'
 import { inject, ref } from 'vue'
 import { gridContentWidth } from '../providers'
 
+const { dark } = withDefaults(
+  defineProps<{
+    dark: boolean
+  }>(),
+  {
+    dark: false,
+  }
+)
+
 const width = inject(gridContentWidth, ref(0))
 const playerVisibility = ref(false)
 
@@ -29,40 +38,60 @@ function hidePlayer() {
 </script>
 
 <template>
-  <div
-    class="overlay"
-    :class="{ visible: playerVisibility }"
-    @click="playerVisibility = false"
-  ></div>
-  <div class="navbar" :style="{ width: `${width}px` }">
-    <nav>
-      <div class="site-title">
-        <div class="sup">指针的</div>
-        <div>CD 架</div>
-      </div>
-      <div class="mini-player">
-        <div
-          class="blur-cover"
-          style="background-image: url(http://127.0.0.1:8000/album3.jpg)"
-        ></div>
-        <div class="control-area" :class="{ visible: !playerVisibility }">
-          <button class="control">
-            <Icon :size="24">
-              <PlayArrowRound />
-            </Icon>
-          </button>
-          <button class="control">
-            <Icon :size="24">
-              <SkipNextRound />
-            </Icon>
+  <div :class="{ dark }">
+    <div
+      class="overlay"
+      :class="{ visible: playerVisibility }"
+      @click="playerVisibility = false"
+    ></div>
+    <div class="navbar" :style="{ width: `${width}px` }">
+      <nav>
+        <div class="site-title" role="link" @click="$router.push('/')">
+          <div class="sup">指针的</div>
+          <div>CD 架</div>
+        </div>
+        <div class="mini-player">
+          <div
+            class="blur-cover"
+            style="background-image: url(http://127.0.0.1:8000/album3.jpg)"
+          ></div>
+          <div class="control-area" :class="{ visible: !playerVisibility }">
+            <button class="control">
+              <Icon :size="24">
+                <PlayArrowRound />
+              </Icon>
+            </button>
+            <button class="control">
+              <Icon :size="24">
+                <SkipNextRound />
+              </Icon>
+            </button>
+          </div>
+          <button
+            class="expand-info"
+            @mouseenter="showPlayer"
+            @mouseleave="hidePlayer"
+          >
+            <div class="play-info" translate="no">
+              <div class="title">雲上の桜花道</div>
+              <div class="album-info">
+                <div class="album">桜花爛漫</div>
+                <div class="dot"></div>
+                <div class="artist">Sound Refil</div>
+              </div>
+            </div>
           </button>
         </div>
-        <button
-          class="expand-info"
-          @mouseenter="showPlayer"
-          @mouseleave="hidePlayer"
-        >
-          <div class="play-info" translate="no">
+      </nav>
+      <div
+        class="player"
+        :class="{ visible: playerVisibility }"
+        @mouseenter="showPlayer"
+        @mouseleave="hidePlayer"
+      >
+        <img src="http://127.0.0.1:8000/album3.jpg" />
+        <div class="content">
+          <div class="play-info">
             <div class="title">雲上の桜花道</div>
             <div class="album-info">
               <div class="album">桜花爛漫</div>
@@ -70,41 +99,23 @@ function hidePlayer() {
               <div class="artist">Sound Refil</div>
             </div>
           </div>
-        </button>
-      </div>
-    </nav>
-    <div
-      class="player"
-      :class="{ visible: playerVisibility }"
-      @mouseenter="showPlayer"
-      @mouseleave="hidePlayer"
-    >
-      <img src="http://127.0.0.1:8000/album3.jpg" />
-      <div class="content">
-        <div class="play-info">
-          <div class="title">雲上の桜花道</div>
-          <div class="album-info">
-            <div class="album">桜花爛漫</div>
-            <div class="dot"></div>
-            <div class="artist">Sound Refil</div>
+          <div class="control-area">
+            <button class="control">
+              <Icon :size="24">
+                <SkipPreviousRound />
+              </Icon>
+            </button>
+            <button class="control">
+              <Icon :size="24">
+                <PlayArrowRound />
+              </Icon>
+            </button>
+            <button class="control">
+              <Icon :size="24">
+                <SkipNextRound />
+              </Icon>
+            </button>
           </div>
-        </div>
-        <div class="control-area">
-          <button class="control">
-            <Icon :size="24">
-              <SkipPreviousRound />
-            </Icon>
-          </button>
-          <button class="control">
-            <Icon :size="24">
-              <PlayArrowRound />
-            </Icon>
-          </button>
-          <button class="control">
-            <Icon :size="24">
-              <SkipNextRound />
-            </Icon>
-          </button>
         </div>
       </div>
     </div>
@@ -115,7 +126,8 @@ function hidePlayer() {
 $border-radius: 5px;
 $border: rgba(30, 30, 30, 0.2) 1px solid;
 $backdrop-blur: 20px;
-$text-color: rgba(0, 0, 0, 0.8);
+$text-in-light: rgba(0, 0, 0, 0.8);
+$text-in-dark: rgba(255, 255, 255, 0.8);
 
 .navbar {
   position: sticky;
@@ -134,15 +146,33 @@ nav {
   border-radius: $border-radius;
   border: $border;
   overflow: hidden;
+
+  @at-root .dark & {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  button {
+    @at-root .dark & {
+      color: $text-in-dark;
+    }
+  }
 }
 
 .site-title {
   font-size: 2rem;
-  flex: 1;
+  cursor: pointer;
 
   .sup {
     color: rgba(0, 0, 0, 0.5);
     font-size: 1rem;
+
+    @at-root .dark & {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  @at-root .dark & {
+    color: $text-in-dark;
   }
 }
 
@@ -171,6 +201,7 @@ button.control {
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-left: auto;
 
   .expand-info {
     padding: 10px;
@@ -242,7 +273,11 @@ button.control {
       width: 4px;
       height: 4px;
       border-radius: 2px;
-      background-color: $text-color;
+      background-color: $text-in-light;
+
+      @at-root .dark nav & {
+        background-color: $text-in-dark;
+      }
     }
   }
 }
@@ -311,6 +346,10 @@ button.control {
   &.visible {
     opacity: 1;
     pointer-events: all;
+
+    @at-root .dark & {
+      opacity: 0;
+    }
   }
 }
 </style>
