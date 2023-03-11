@@ -4,7 +4,7 @@ import GridContentWidthProvider from './components/GridContentWidthProvider.vue'
 
 <template>
   <GridContentWidthProvider>
-    <RouterView></RouterView>
+    <RouterView />
   </GridContentWidthProvider>
 </template>
 
