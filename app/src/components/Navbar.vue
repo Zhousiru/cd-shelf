@@ -125,6 +125,7 @@ function hidePlayer() {
 <style scoped lang="scss">
 $border-radius: 5px;
 $border: rgba(30, 30, 30, 0.2) 1px solid;
+$outline-shadow: 0 0 0 0.5px rgba(30, 30, 30, 0.2);
 $backdrop-blur: 20px;
 $text-in-light: rgba(0, 0, 0, 0.8);
 $text-in-dark: rgba(255, 255, 255, 0.8);
@@ -144,7 +145,7 @@ nav {
   box-sizing: border-box;
   align-items: center;
   border-radius: $border-radius;
-  outline: $border;
+  box-shadow: $outline-shadow;
   overflow: hidden;
   position: relative;
   z-index: 100;
@@ -193,7 +194,7 @@ button.expand-info {
 button.control {
   display: flex;
   height: 36px;
-  aspect-ratio: 1;
+  width: 36px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -291,7 +292,7 @@ button.control {
   right: 0;
   margin-top: 10px;
   border-radius: $border-radius;
-  outline: $border;
+  box-shadow: $outline-shadow;
   overflow: hidden;
   backdrop-filter: blur($backdrop-blur);
   pointer-events: none;
@@ -332,6 +333,7 @@ button.control {
 
   button.control {
     height: 42px;
+    width: 42px;
   }
 }
 
