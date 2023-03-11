@@ -38,13 +38,13 @@ function hidePlayer() {
 </script>
 
 <template>
-  <div :class="{ dark }">
+  <div class="navbar-wrapper" :class="{ dark }">
     <div
       class="overlay"
       :class="{ visible: playerVisibility }"
       @click="playerVisibility = false"
     ></div>
-    <div class="navbar" :style="{ width: `${width}px` }">
+    <div :style="{ width: `${width}px` }">
       <nav>
         <div class="site-title" role="link" @click="$router.push('/')">
           <div class="sup">指针的</div>
@@ -124,15 +124,15 @@ function hidePlayer() {
 
 <style scoped lang="scss">
 $border-radius: 5px;
-$border: rgba(125, 125, 125, 0.2) 1px solid;
+$border: rgba(30, 30, 30, 0.2) 1px solid;
 $backdrop-blur: 20px;
 $text-in-light: rgba(0, 0, 0, 0.8);
 $text-in-dark: rgba(255, 255, 255, 0.8);
 
-.navbar {
+.navbar-wrapper {
   position: sticky;
   top: 20px;
-  z-index: 100;
+  z-index: 90;
 }
 
 nav {
@@ -146,6 +146,8 @@ nav {
   border-radius: $border-radius;
   outline: $border;
   overflow: hidden;
+  position: relative;
+  z-index: 100;
 
   @at-root .dark & {
     background-color: rgba(255, 255, 255, 0.1);
