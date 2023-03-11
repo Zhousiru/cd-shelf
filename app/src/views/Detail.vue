@@ -38,7 +38,7 @@ import Navbar from '../components/Navbar.vue'
 
   .cover {
     background-size: cover;
-    filter: blur(80px);
+    filter: blur(40px);
     transform: scale(1.2);
   }
 

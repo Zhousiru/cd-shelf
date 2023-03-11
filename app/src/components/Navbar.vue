@@ -124,7 +124,7 @@ function hidePlayer() {
 
 <style scoped lang="scss">
 $border-radius: 5px;
-$border: rgba(30, 30, 30, 0.2) 1px solid;
+$border: rgba(125, 125, 125, 0.2) 1px solid;
 $backdrop-blur: 20px;
 $text-in-light: rgba(0, 0, 0, 0.8);
 $text-in-dark: rgba(255, 255, 255, 0.8);
@@ -144,7 +144,7 @@ nav {
   box-sizing: border-box;
   align-items: center;
   border-radius: $border-radius;
-  border: $border;
+  outline: $border;
   overflow: hidden;
 
   @at-root .dark & {
@@ -289,7 +289,7 @@ button.control {
   right: 0;
   margin-top: 10px;
   border-radius: $border-radius;
-  border: $border;
+  outline: $border;
   overflow: hidden;
   backdrop-filter: blur($backdrop-blur);
   pointer-events: none;
