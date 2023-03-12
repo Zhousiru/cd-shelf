@@ -106,6 +106,9 @@ onUnmounted(() => {
 @import '../styles/grid.scss';
 $navbar-gap: 80px;
 $grid-row-gap: 2rem;
+$breakpoint-lg: 1300px;
+$breakpoint-md: 950px;
+$breakpoint-sm: 450px;
 
 .container {
   min-height: 100vh;
@@ -149,7 +152,7 @@ $grid-row-gap: 2rem;
   container-type: inline-size;
   width: 100%;
 
-  @media (width < 950px) {
+  @media (width < $breakpoint-md) {
     grid-template-columns: auto;
   }
 }
@@ -165,11 +168,11 @@ $grid-row-gap: 2rem;
   box-shadow: 0 20px 40px 10px rgba(0, 0, 0, 0.2);
   width: 350px;
 
-  @media (width < 950px) {
+  @media (width < $breakpoint-md) {
     width: 90cqi;
   }
 
-  @media (width < 450px) {
+  @media (width < $breakpoint-sm) {
     width: 100cqi;
   }
 }
@@ -269,7 +272,7 @@ $grid-row-gap: 2rem;
   opacity: 0;
   transition: all 0.2s;
 
-  @media (width < 1300px) {
+  @media (width < $breakpoint-lg) {
     display: none;
   }
 
@@ -299,11 +302,11 @@ $grid-row-gap: 2rem;
   flex-direction: column;
   gap: 2rem;
 
-  @media (width >= 1300px) {
+  @media (width >= $breakpoint-lg) {
     width: 100% !important;
   }
 
-  @media (width < 1300px) {
+  @media (width < $breakpoint-lg) {
     grid-column: 1 / -1;
   }
 }
