@@ -104,9 +104,15 @@ const mainWidth = computed(() => {
   grid-template-columns: auto 1fr;
   column-gap: 5rem;
   row-gap: 2rem;
+  container-type: inline-size;
+
+  @media screen and (max-width: 950px) {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
 
   > img {
-    width: 350px;
+    width: min(100cqi, 350px);
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 5px;
@@ -131,14 +137,14 @@ const mainWidth = computed(() => {
 
     h1 {
       color: rgba(255, 255, 255, 0.9);
-      font-size: clamp(4rem, 12cqw, 8rem);
+      font-size: clamp(4rem, 12cqi, 8rem);
       font-weight: 400;
     }
 
     h2 {
       margin-top: 0.5rem;
       color: rgba(255, 255, 255, 0.8);
-      font-size: clamp(1.5rem, 4cqw, 3rem);
+      font-size: clamp(1.5rem, 4cqi, 3rem);
       font-weight: 200;
     }
 
