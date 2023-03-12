@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.vue'
 import { gridContentWidth } from '../providers'
 import { PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
+import DetailSection from '../components/DetailSection.vue'
 
 const navWidth = inject(gridContentWidth, ref(0))
 const mainWidth = computed(() => {
@@ -34,26 +35,29 @@ const mainWidth = computed(() => {
   <div class="container">
     <Navbar dark />
     <div class="detail-wrapper" :style="{ width: mainWidth }">
-      <div class="album">
-        <img src="http://127.0.0.1:8000/album1.jpg" />
-        <div class="album-info">
-          <h1>晴雲秋月</h1>
-          <h2>Sound Refil</h2>
-          <ul class="album-meta">
-            <li>发行于 2015 年</li>
-            <div class="dot"></div>
-            <li>购于骏河屋</li>
-          </ul>
-        </div>
-        <div class="play-button-wrapper">
-          <button class="play" :style="{ backgroundColor: 'rgb(207, 66, 22)' }">
-            <Icon :size="24">
-              <PlayArrowRound />
-            </Icon>
-          </button>
-        </div>
+      <img src="http://127.0.0.1:8000/album1.jpg" />
+      <div class="album-info">
+        <h1>晴雲秋月</h1>
+        <h2>Sound Refil</h2>
+        <ul class="album-meta">
+          <li>发行于 2015 年</li>
+          <div class="dot"></div>
+          <li>购于骏河屋</li>
+        </ul>
       </div>
-      <div class="detail"></div>
+      <div class="play-button-wrapper">
+        <button class="play" :style="{ backgroundColor: 'rgb(207, 66, 22)' }">
+          <Icon :size="24">
+            <PlayArrowRound />
+          </Icon>
+        </button>
+      </div>
+      <div class="detail">
+        <DetailSection>
+          <template #title>Intro</template>
+          介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。
+        </DetailSection>
+      </div>
     </div>
   </div>
 </template>
@@ -94,32 +98,35 @@ const mainWidth = computed(() => {
 }
 
 .detail-wrapper {
-  display: flex;
   margin-top: 100px;
-  flex-direction: column;
-}
-
-.album {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 5rem;
   row-gap: 2rem;
   container-type: inline-size;
 
-  @media screen and (max-width: 950px) {
+  @media (width < 950px) {
     grid-template-columns: auto;
-    justify-content: center;
   }
 
   > img {
-    width: min(100cqi, 350px);
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 5px;
     display: block;
     grid-row: span 2;
     align-self: center;
+    justify-self: center;
     box-shadow: 0 20px 40px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+
+    @media (width < 950px) {
+      width: 90cqi;
+    }
+
+    @media (width < 450px) {
+      width: 100cqi;
+    }
   }
 
   .album-info {
@@ -196,6 +203,15 @@ const mainWidth = computed(() => {
         opacity: 1;
       }
     }
+  }
+}
+
+.detail {
+  margin-top: 3rem;
+  grid-column: 2;
+
+  @media (width < 1300px) {
+    grid-column: 1 / -1;
   }
 }
 </style>
