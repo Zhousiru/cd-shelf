@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject, ref } from 'vue'
+import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
 import Navbar from '../components/Navbar.vue'
 import { gridContentWidth } from '../providers'
 import { PlayArrowRound } from '@vicons/material'
@@ -15,12 +15,34 @@ const mainWidth = computed(() => {
   const rate = navWidth.value / maxWidth
 
   if (maxWidth > 1100 && rate > 0.85) {
-    return navWidth.value + 'px'
+    return navWidth.value
   }
   if (maxWidth <= 1100) {
-    return navWidth.value + 'px'
+    return navWidth.value
   }
-  return '85vw'
+  return 0.85 * document.documentElement.clientWidth
+})
+const albumRef = ref<HTMLDivElement | null>()
+const floatAlbumVisibility = ref(false)
+
+const observer = new IntersectionObserver(setFloatAlbumVisibility, {
+  threshold: [0],
+})
+function setFloatAlbumVisibility(e: IntersectionObserverEntry[]) {
+  floatAlbumVisibility.value = !e[0].isIntersecting
+}
+
+onMounted(() => {
+  if (albumRef.value) {
+    observer.observe(albumRef.value)
+  }
+})
+
+onUnmounted(() => {
+  if (albumRef.value) {
+    observer.unobserve(albumRef.value)
+    observer.disconnect()
+  }
 })
 </script>
 
@@ -32,10 +54,14 @@ const mainWidth = computed(() => {
     ></div>
     <div class="overlay"></div>
   </div>
-  <div class="container">
+  <div class="container" :style="{ width: `${mainWidth}px` }">
     <Navbar dark />
-    <div class="detail-wrapper" :style="{ width: mainWidth }">
-      <img src="http://127.0.0.1:8000/album1.jpg" />
+    <div class="detail-wrapper">
+      <img
+        class="album-cover"
+        src="http://127.0.0.1:8000/album1.jpg"
+        ref="albumRef"
+      />
       <div class="album-info">
         <h1>晴雲秋月</h1>
         <h2>Sound Refil</h2>
@@ -53,10 +79,24 @@ const mainWidth = computed(() => {
         </button>
       </div>
       <div class="detail" :style="{ width: `${navWidth}px` }">
-        <DetailSection>
+        <DetailSection v-for="i in 10">
           <template #title>Intro</template>
           介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。
         </DetailSection>
+      </div>
+    </div>
+    <div class="float-album-wrapper" :style="{ width: `${mainWidth}px` }">
+      <div class="float-album" :class="{ visible: floatAlbumVisibility }">
+        <img class="album-cover" src="http://127.0.0.1:8000/album1.jpg" />
+        <div class="album-info">
+          <h1>晴雲秋月</h1>
+          <h2>Sound Refil</h2>
+          <ul class="album-meta">
+            <li>发行于 2015 年</li>
+            <div class="dot"></div>
+            <li>购于骏河屋</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -76,6 +116,7 @@ $grid-row-gap: 2rem;
   box-sizing: border-box;
   position: relative;
   z-index: 20;
+  margin: 0 auto;
 }
 
 .background {
@@ -106,105 +147,147 @@ $grid-row-gap: 2rem;
   column-gap: 5rem;
   row-gap: $grid-row-gap;
   container-type: inline-size;
+  width: 100%;
 
   @media (width < 950px) {
     grid-template-columns: auto;
   }
+}
 
-  > img {
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 5px;
-    display: block;
-    grid-row: span 2;
-    align-self: center;
-    justify-self: center;
-    box-shadow: 0 20px 40px 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
+.album-cover {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  grid-row: span 2;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0 20px 40px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
 
-    @media (width < 950px) {
-      width: 90cqi;
-    }
-
-    @media (width < 450px) {
-      width: 100cqi;
-    }
+  @media (width < 950px) {
+    width: 90cqi;
   }
 
-  .album-info {
+  @media (width < 450px) {
+    width: 100cqi;
+  }
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  container-type: inline-size;
+
+  h1,
+  h2,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(4rem, 12cqi, 8rem);
+    font-weight: 400;
+  }
+
+  h2 {
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(1.5rem, 4cqi, 3rem);
+    font-weight: 200;
+  }
+
+  ul {
+    margin-top: 2rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    container-type: inline-size;
+    list-style-type: none;
+    gap: 0.5rem;
+    font-weight: 100;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.6);
 
-    h1,
-    h2,
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    h1 {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: clamp(4rem, 12cqi, 8rem);
-      font-weight: 400;
-    }
-
-    h2 {
-      margin-top: 0.5rem;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: clamp(1.5rem, 4cqi, 3rem);
-      font-weight: 200;
-    }
-
-    ul {
-      margin-top: 2rem;
-      display: flex;
-      list-style-type: none;
-      gap: 0.5rem;
-      font-weight: 100;
-      align-items: center;
-      color: rgba(255, 255, 255, 0.6);
-
-      .dot {
-        width: 4px;
-        height: 4px;
-        border-radius: 2px;
-        background-color: rgba(255, 255, 255, 0.6);
-      }
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.6);
     }
   }
+}
 
-  .play-button-wrapper {
-    align-self: center;
+.play-button-wrapper {
+  align-self: center;
 
-    button.play {
-      border: none;
-      width: 150px;
-      height: 50px;
-      border-radius: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
+  button.play {
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 
-      &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: rgba(255, 255, 255, 0.1);
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
-
-      &:hover::after {
-        opacity: 1;
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
     }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+.float-album-wrapper {
+  $top-offset: calc(120px + 5rem);
+
+  position: fixed;
+  top: $top-offset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.float-album {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateY(-10%);
+  opacity: 0;
+  transition: all 0.2s;
+
+  @media (width < 1300px) {
+    display: none;
+  }
+
+  &.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .album-cover {
+    width: 350px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
   }
 }
 
@@ -212,6 +295,9 @@ $grid-row-gap: 2rem;
   margin-top: calc($navbar-gap - $grid-row-gap);
   grid-column: 2;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
   @media (width >= 1300px) {
     width: 100% !important;

@@ -28,5 +28,6 @@ section {
   padding: 0.5rem;
   text-align: justify;
   line-height: 1.3;
+  font-weight: 300;
 }
 </style>
