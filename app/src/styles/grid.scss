@@ -12,7 +12,7 @@
   width: 400px;
 }
 
-@media screen and (max-width: 950px) {
+@media (width < 950px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, clamp(420px, 60vw, 100vw));
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (width < 450px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, 320px);
   }
