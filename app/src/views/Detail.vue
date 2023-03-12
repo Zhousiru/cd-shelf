@@ -52,7 +52,7 @@ const mainWidth = computed(() => {
           </Icon>
         </button>
       </div>
-      <div class="detail">
+      <div class="detail" :style="{ width: `${navWidth}px` }">
         <DetailSection>
           <template #title>Intro</template>
           介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。
@@ -64,13 +64,15 @@ const mainWidth = computed(() => {
 
 <style scoped lang="scss">
 @import '../styles/grid.scss';
+$navbar-gap: 80px;
+$grid-row-gap: 2rem;
 
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: $navbar-gap;
   box-sizing: border-box;
   position: relative;
   z-index: 20;
@@ -98,11 +100,11 @@ const mainWidth = computed(() => {
 }
 
 .detail-wrapper {
-  margin-top: 100px;
+  margin-top: $navbar-gap;
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 5rem;
-  row-gap: 2rem;
+  row-gap: $grid-row-gap;
   container-type: inline-size;
 
   @media (width < 950px) {
@@ -207,8 +209,13 @@ const mainWidth = computed(() => {
 }
 
 .detail {
-  margin-top: 3rem;
+  margin-top: calc($navbar-gap - $grid-row-gap);
   grid-column: 2;
+  justify-self: center;
+
+  @media (width >= 1300px) {
+    width: 100% !important;
+  }
 
   @media (width < 1300px) {
     grid-column: 1 / -1;
