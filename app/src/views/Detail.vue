@@ -170,6 +170,10 @@ $normal-cover-size: 350px;
   top: calc(120px + $grid-col-gap);
   z-index: 20;
 
+  @media (width < $breakpoint-lg) {
+    position: static;
+  }
+
   @media (width < $breakpoint-md) {
     width: 90cqi;
   }
