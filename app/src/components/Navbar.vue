@@ -53,7 +53,7 @@ function hidePlayer() {
         <div class="mini-player">
           <div
             class="blur-cover"
-            style="background-image: url(http://127.0.0.1:8000/album3.jpg)"
+            style="background-image: url(album3.jpg)"
           ></div>
           <div class="control-area" :class="{ visible: !playerVisibility }">
             <button class="control">
@@ -89,7 +89,7 @@ function hidePlayer() {
         @mouseenter="showPlayer"
         @mouseleave="hidePlayer"
       >
-        <img src="http://127.0.0.1:8000/album3.jpg" />
+        <img src="album3.jpg" />
         <div class="content">
           <div class="play-info">
             <div class="title">雲上の桜花道</div>

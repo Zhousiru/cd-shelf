@@ -22,7 +22,7 @@ function handleCDClick(cdID: string) {
       <!-- Debug Data -->
       <CDCase
         v-for="i in 10"
-        :album-art="`http://127.0.0.1:8000/album${(i % 5) + 1}.jpg`"
+        :album-art="`album${(i % 5) + 1}.jpg`"
         @click="handleCDClick(i.toString())"
       />
     </div>

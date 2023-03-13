@@ -48,21 +48,14 @@ onUnmounted(() => {
 
 <template>
   <div class="background">
-    <div
-      class="cover"
-      :style="{ backgroundImage: 'url(http://127.0.0.1:8000/album1.jpg)' }"
-    ></div>
+    <div class="cover" :style="{ backgroundImage: 'url(album1.jpg)' }"></div>
     <div class="overlay"></div>
   </div>
   <div class="container" :style="{ width: `${mainWidth}px` }">
     <Navbar dark />
     <div class="detail-wrapper">
-      <img
-        class="album-cover"
-        src="http://127.0.0.1:8000/album1.jpg"
-        ref="albumRef"
-      />
-      <div class="album-info">
+      <img class="album-cover" src="album1.jpg" />
+      <div class="album-info" ref="albumRef">
         <h1>晴雲秋月</h1>
         <h2>Sound Refil</h2>
         <ul class="album-meta">
@@ -87,7 +80,6 @@ onUnmounted(() => {
     </div>
     <div class="float-album-wrapper" :style="{ width: `${mainWidth}px` }">
       <div class="float-album" :class="{ visible: floatAlbumVisibility }">
-        <img class="album-cover" src="http://127.0.0.1:8000/album1.jpg" />
         <div class="album-info">
           <h1>晴雲秋月</h1>
           <h2>Sound Refil</h2>
@@ -106,9 +98,11 @@ onUnmounted(() => {
 @import '../styles/grid.scss';
 $navbar-gap: 80px;
 $grid-row-gap: 2rem;
+$grid-col-gap: 5rem;
 $breakpoint-lg: 1300px;
 $breakpoint-md: 950px;
 $breakpoint-sm: 450px;
+$normal-cover-size: 350px;
 
 .container {
   min-height: 100vh;
@@ -147,7 +141,7 @@ $breakpoint-sm: 450px;
   margin-top: $navbar-gap;
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 5rem;
+  column-gap: $grid-col-gap;
   row-gap: $grid-row-gap;
   container-type: inline-size;
   width: 100%;
@@ -166,7 +160,10 @@ $breakpoint-sm: 450px;
   align-self: center;
   justify-self: center;
   box-shadow: 0 20px 40px 10px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: $normal-cover-size;
+  position: sticky;
+  top: calc(120px + $grid-col-gap);
+  z-index: 20;
 
   @media (width < $breakpoint-md) {
     width: 90cqi;
@@ -254,7 +251,7 @@ $breakpoint-sm: 450px;
 }
 
 .float-album-wrapper {
-  $top-offset: calc(120px + 5rem);
+  $top-offset: calc(120px + $grid-col-gap + $normal-cover-size + 1rem);
 
   position: fixed;
   top: $top-offset;
@@ -265,10 +262,11 @@ $breakpoint-sm: 450px;
 .float-album {
   position: absolute;
   left: 0;
+  width: $normal-cover-size;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transform: translateY(-10%);
+  transform: translateY(-5%);
   opacity: 0;
   transition: all 0.2s;
 
@@ -279,10 +277,6 @@ $breakpoint-sm: 450px;
   &.visible {
     transform: translateY(0);
     opacity: 1;
-  }
-
-  .album-cover {
-    width: 350px;
   }
 
   h1 {
