@@ -134,11 +134,12 @@ $normal-cover-size: 350px;
   .cover {
     background-size: cover;
     filter: blur(40px);
-    transform: scale(1.2);
+    transform: scale(1.2); // Fix mobile browser navigator gap.
   }
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.2);
   }
 }
 
