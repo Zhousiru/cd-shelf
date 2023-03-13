@@ -48,13 +48,18 @@ onUnmounted(() => {
 
 <template>
   <div class="background">
-    <div class="cover" :style="{ backgroundImage: 'url(album1.jpg)' }"></div>
+    <div
+      class="cover"
+      :style="{
+        backgroundImage: `url(/debug/album1.jpg)`,
+      }"
+    ></div>
     <div class="overlay"></div>
   </div>
   <div class="container" :style="{ width: `${mainWidth}px` }">
     <Navbar dark />
     <div class="detail-wrapper">
-      <img class="album-cover" src="album1.jpg" />
+      <img class="album-cover" src="/debug/album1.jpg" />
       <div class="album-info" ref="albumRef">
         <h1>晴雲秋月</h1>
         <h2>Sound Refil</h2>
