@@ -1,0 +1,24 @@
+[
+  {
+    "name": "水古譚 -suikotan-",
+    "id": "suikotan",
+    "publisher": "流派未月亭",
+    "year": 2015,
+    "meta": ["购于骏河屋"],
+    "cover": "https://upload.thwiki.cc/e/e0/%E6%B0%B4%E5%8F%A4%E8%AD%9A_-suikotan-%E5%B0%81%E9%9D%A2.jpg",
+    "intro": "",
+    "track": [
+      {
+        "title": "諷詠",
+        "duration": 145,
+        "star": true,
+        "comment": "",
+        "meta": {
+          "编曲": "漉餡",
+          "原曲": "不思議なお祓い棒"
+        },
+        "source": "https://..."
+      }
+    ]
+  }
+]
