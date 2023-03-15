@@ -152,7 +152,7 @@ $normal-cover-size: 350px;
   container-type: inline-size;
   width: 100%;
 
-  @media (width < $breakpoint-md) {
+  @media (max-width: $breakpoint-md) {
     grid-template-columns: auto;
   }
 }
@@ -171,15 +171,15 @@ $normal-cover-size: 350px;
   top: calc(120px + $grid-col-gap);
   z-index: 20;
 
-  @media (width < $breakpoint-lg) {
+  @media (max-width: $breakpoint-lg) {
     position: static;
   }
 
-  @media (width < $breakpoint-md) {
+  @media (max-width: $breakpoint-md) {
     width: 90cqi;
   }
 
-  @media (width < $breakpoint-sm) {
+  @media (max-width: $breakpoint-sm) {
     width: 100cqi;
   }
 }
@@ -280,7 +280,7 @@ $normal-cover-size: 350px;
   opacity: 0;
   transition: all 0.2s;
 
-  @media (width < $breakpoint-lg) {
+  @media (max-width: $breakpoint-lg) {
     display: none;
   }
 
@@ -306,11 +306,11 @@ $normal-cover-size: 350px;
   flex-direction: column;
   gap: 2rem;
 
-  @media (width >= $breakpoint-lg) {
+  @media (min-width: $breakpoint-lg) {
     width: 100% !important;
   }
 
-  @media (width < $breakpoint-lg) {
+  @media (max-width: $breakpoint-lg) {
     grid-column: 1 / -1;
   }
 }

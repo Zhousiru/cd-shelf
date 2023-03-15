@@ -12,7 +12,7 @@
   width: 400px;
 }
 
-@media (width < 950px) {
+@media (max-width: 950px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, clamp(420px, 60vw, 100vw));
   }
@@ -22,9 +22,9 @@
   }
 }
 
-@media (width < 450px) {
+@media (max-width: 450px) {
   .grid-container {
-    grid-template-columns: repeat(auto-fill, 320px);
+    grid-template-columns: 320px;
   }
 
   .grid-container > * {

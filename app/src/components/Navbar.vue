@@ -250,7 +250,7 @@ button.control {
   }
 
   button.control {
-    @media (width < 450px) {
+    @media (max-width: 450px) {
       display: none;
     }
   }
