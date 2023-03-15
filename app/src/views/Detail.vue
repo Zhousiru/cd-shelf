@@ -22,25 +22,26 @@ const mainWidth = computed(() => {
   }
   return 0.85 * document.documentElement.clientWidth
 })
-const albumRef = ref<HTMLDivElement | null>()
+const albumNameRef = ref<HTMLDivElement | null>()
 const floatAlbumVisibility = ref(false)
 
 const observer = new IntersectionObserver(setFloatAlbumVisibility, {
   threshold: [0],
+  rootMargin: '-120px',
 })
 function setFloatAlbumVisibility(e: IntersectionObserverEntry[]) {
   floatAlbumVisibility.value = !e[0].isIntersecting
 }
 
 onMounted(() => {
-  if (albumRef.value) {
-    observer.observe(albumRef.value)
+  if (albumNameRef.value) {
+    observer.observe(albumNameRef.value)
   }
 })
 
 onUnmounted(() => {
-  if (albumRef.value) {
-    observer.unobserve(albumRef.value)
+  if (albumNameRef.value) {
+    observer.unobserve(albumNameRef.value)
     observer.disconnect()
   }
 })
@@ -60,8 +61,8 @@ onUnmounted(() => {
     <Navbar dark />
     <div class="detail-wrapper">
       <img class="album-cover" src="/debug/album1.jpg" />
-      <div class="album-info" ref="albumRef">
-        <h1>晴雲秋月</h1>
+      <div class="album-info">
+        <h1 ref="albumNameRef">晴雲秋月</h1>
         <h2>Sound Refil</h2>
         <ul class="album-meta">
           <li>发行于 2015 年</li>
