@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NumbersRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import DetailSection from './DetailSection.vue'
 
 const data = ref([
@@ -95,19 +95,35 @@ const expanded = ref<{
   height: -1,
 })
 
-function toggleExpand(index: number) {
-  const contentEl = trackListRef.value[index].querySelector(
+function setExpandedHeight() {
+  if (expanded.value.index === -1) {
+    return
+  }
+
+  const contentEl = trackListRef.value[expanded.value.index].querySelector(
     '.content'
   ) as HTMLDivElement
 
   expanded.value.height = contentEl.getBoundingClientRect().height
+}
 
+function toggleExpand(index: number) {
   if (expanded.value.index !== index) {
     expanded.value.index = index
   } else {
     expanded.value.index = -1
   }
+
+  setExpandedHeight()
 }
+
+onMounted(() => {
+  window.addEventListener('resize', setExpandedHeight)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', setExpandedHeight)
+})
 </script>
 
 <template>
@@ -204,9 +220,11 @@ ol {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   gap: 1.6rem;
+  row-gap: 1.6rem;
   padding: 0;
   margin: 0;
   align-items: center;
+  flex-wrap: wrap;
 
   li:not(:last-child) {
     position: relative;
