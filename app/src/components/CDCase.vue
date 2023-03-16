@@ -12,15 +12,9 @@ const { albumArt, animation } = withDefaults(
 
 <template>
   <div class="cd-case" :class="{ animation }">
-    <div
-      class="cd-shadow"
-      :style="{ backgroundImage: `url(${albumArt})` }"
-    ></div>
-    <div
-      class="cover cover-shadow"
-      :style="{ backgroundImage: `url(${albumArt})` }"
-    ></div>
-    <div class="cover" :style="{ backgroundImage: `url(${albumArt})` }"></div>
+    <div class="cd-shadow"></div>
+    <div class="cover cover-shadow"></div>
+    <div class="cover"></div>
     <div class="case-mask"></div>
   </div>
 </template>
@@ -40,6 +34,11 @@ const { albumArt, animation } = withDefaults(
   position: absolute;
   inset: 0;
   mix-blend-mode: multiply;
+}
+
+.cd-case > .cover,
+.cd-case > .cd-shadow {
+  background-image: v-bind('"url(" + albumArt + ")"');
 }
 
 .cd-case > .cover {

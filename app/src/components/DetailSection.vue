@@ -11,7 +11,7 @@
   </article>
 </template>
 
-<style>
+<style scoped>
 article {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -25,7 +25,6 @@ header {
 
 section {
   font-size: 1.5rem;
-  padding: 0.5rem;
   text-align: justify;
   line-height: 1.3;
   font-weight: 300;

@@ -5,19 +5,277 @@
     "publisher": "流派未月亭",
     "year": 2015,
     "meta": ["购于骏河屋"],
-    "cover": "https://upload.thwiki.cc/e/e0/%E6%B0%B4%E5%8F%A4%E8%AD%9A_-suikotan-%E5%B0%81%E9%9D%A2.jpg",
+    "cover": "",
     "intro": "",
     "track": [
       {
         "title": "諷詠",
         "duration": 145,
-        "star": true,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "不思議なお祓い棒" },
+        "source": ""
+      },
+      {
+        "title": "汀",
+        "duration": 214,
+        "star": false,
         "comment": "",
         "meta": {
           "编曲": "漉餡",
-          "原曲": "不思議なお祓い棒"
+          "演唱": "Laco.",
+          "作詞": "鷹野友紀",
+          "原曲": "ミストレイク"
         },
-        "source": "https://..."
+        "source": ""
+      },
+      {
+        "title": "柳ニ風",
+        "duration": 209,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "柳の下のデュラハン" },
+        "source": ""
+      },
+      {
+        "title": "蒼月夜",
+        "duration": 329,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "漉餡",
+          "演唱": "Laco.",
+          "作詞": "鷹野友紀",
+          "原曲": "満月の竹林"
+        },
+        "source": ""
+      },
+      {
+        "title": "鬼謳",
+        "duration": 231,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "RD-Sounds",
+          "原曲": "リバースイデオロギー"
+        },
+        "source": ""
+      },
+      {
+        "title": "敢闘 -little bravery-",
+        "duration": 205,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "漉餡",
+          "原曲": "輝く針の小人族 ~ Little Princess"
+        },
+        "source": ""
+      },
+      {
+        "title": "汀 (Instrumental ver)",
+        "duration": 214,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "ミストレイク" },
+        "source": ""
+      },
+      {
+        "title": "蒼月夜 (Instrumental ver)",
+        "duration": 328,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "満月の竹林" },
+        "source": ""
+      }
+    ]
+  },
+  {
+    "name": "永劫回帰",
+    "id": "eigoukaiki",
+    "publisher": "流派未月亭",
+    "year": 2014,
+    "meta": ["购于M3-33"],
+    "cover": "",
+    "intro": "",
+    "track": [
+      {
+        "title": "始祖",
+        "duration": 156,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "漉餡",
+          "原曲": "テーマ・オブ・イースタンストーリー"
+        },
+        "source": ""
+      },
+      {
+        "title": "雅舞",
+        "duration": 262,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "U.N.オーエンは彼女なのか?" },
+        "source": ""
+      },
+      {
+        "title": "秋祠舞",
+        "duration": 274,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "稲田姫様に叱られるから" },
+        "source": ""
+      },
+      {
+        "title": "祝詞舞",
+        "duration": 334,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "漉餡",
+          "演唱": "Laco.",
+          "作詞": "鷹野友紀",
+          "原曲": "少女が見た日本の原風景"
+        },
+        "source": ""
+      },
+      {
+        "title": "神楽舞",
+        "duration": 326,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "少女綺想曲 ~ Dream Battle" },
+        "source": ""
+      },
+      {
+        "title": "祝詞舞(off vocal)",
+        "duration": 336,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "漉餡", "原曲": "少女が見た日本の原風景" },
+        "source": ""
+      }
+    ]
+  },
+  {
+    "name": "IGNITION DANCEHALL",
+    "id": "ignition-dancehall",
+    "publisher": "Alstroemeria Records",
+    "year": 2016,
+    "meta": ["购于骏河屋"],
+    "cover": "",
+    "intro": "",
+    "track": [
+      {
+        "title": "Ignition",
+        "duration": 90,
+        "star": false,
+        "comment": "",
+        "meta": { "作曲": "Masayoshi Minoshima" },
+        "source": ""
+      },
+      {
+        "title": "Beautiful Sky",
+        "duration": 228,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "Masayoshi Minoshima",
+          "演唱": "坂上なち",
+          "作詞": "綾倉盟",
+          "原曲": "U.N.オーエンは彼女なのか？"
+        },
+        "source": ""
+      },
+      {
+        "title": "missing pages",
+        "duration": 285,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "Masayoshi Minoshima",
+          "演唱": "ayame",
+          "作詞": "ayame",
+          "原曲": "Tabula rasa　～空白少女"
+        },
+        "source": ""
+      },
+      {
+        "title": "A_Loops_Z",
+        "duration": 285,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "Syrufit",
+          "演唱": "mican*",
+          "作詞": "Kazumi Mogi",
+          "原曲": "神さびた古戦場　～ Suwa Foughten Field"
+        },
+        "source": ""
+      },
+      {
+        "title": "Dream Again",
+        "duration": 240,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "かめりあ",
+          "演唱": "綾倉盟",
+          "作詞": "かめりあ",
+          "原曲": "the Last Judgement"
+        },
+        "source": ""
+      },
+      {
+        "title": "Apparition Mountain",
+        "duration": 270,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "Tracy", "原曲": "妖怪の山　～ Mysterious Mountain" },
+        "source": ""
+      },
+      {
+        "title": "Don’t Lose",
+        "duration": 285,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "Masayoshi Minoshima",
+          "演唱": "nomico",
+          "作詞": "綾倉盟",
+          "原曲": "亡き王女の為のセプテット"
+        },
+        "source": ""
+      },
+      {
+        "title": "Score",
+        "duration": 209,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "Optimistic", "原曲": "プレイヤーズスコア" },
+        "source": ""
+      },
+      {
+        "title": "Eyes of Truth(ALR REMIX)",
+        "duration": 249,
+        "star": false,
+        "comment": "",
+        "meta": {
+          "编曲": "溝口ゆうま",
+          "再编曲": "Masayoshi Minoshima",
+          "演唱": "KUMI(ヲタみん)",
+          "作詞": "溝口ゆうま",
+          "原曲": "ラストリモート"
+        },
+        "source": ""
+      },
+      {
+        "title": "Kokytos",
+        "duration": 246,
+        "star": false,
+        "comment": "",
+        "meta": { "编曲": "Nardis", "原曲": "メイプルワイズ" },
+        "source": ""
       }
     ]
   }

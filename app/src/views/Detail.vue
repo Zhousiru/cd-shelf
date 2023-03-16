@@ -5,6 +5,7 @@ import { gridContentWidth } from '../providers'
 import { PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import DetailSection from '../components/DetailSection.vue'
+import TrackList from '../components/TrackList.vue'
 
 const navWidth = inject(gridContentWidth, ref(0))
 const mainWidth = computed(() => {
@@ -57,7 +58,7 @@ onUnmounted(() => {
     ></div>
     <div class="overlay"></div>
   </div>
-  <div class="container" :style="{ width: `${mainWidth}px` }">
+  <div class="container">
     <Navbar dark />
     <div class="detail-wrapper">
       <img class="album-cover" src="/debug/album1.jpg" />
@@ -77,14 +78,15 @@ onUnmounted(() => {
           </Icon>
         </button>
       </div>
-      <div class="detail" :style="{ width: `${navWidth}px` }">
+      <div class="detail">
+        <TrackList />
         <DetailSection v-for="i in 10">
           <template #title>Intro</template>
           介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。
         </DetailSection>
       </div>
     </div>
-    <div class="float-album-wrapper" :style="{ width: `${mainWidth}px` }">
+    <div class="float-album-wrapper">
       <div class="float-album" :class="{ visible: floatAlbumVisibility }">
         <div class="album-info">
           <h1>晴雲秋月</h1>
@@ -111,6 +113,7 @@ $breakpoint-sm: 450px;
 $normal-cover-size: 350px;
 
 .container {
+  width: v-bind('mainWidth + "px"');
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -264,6 +267,7 @@ $normal-cover-size: 350px;
 .float-album-wrapper {
   $top-offset: calc(120px + $grid-col-gap + $normal-cover-size + 1rem);
 
+  width: v-bind('mainWidth + "px"');
   position: fixed;
   top: $top-offset;
   left: 50%;
@@ -307,11 +311,8 @@ $normal-cover-size: 350px;
   flex-direction: column;
   gap: 2rem;
 
-  @media (min-width: $breakpoint-lg) {
-    width: 100% !important;
-  }
-
   @media (max-width: $breakpoint-lg) {
+    width: v-bind('navWidth + "px"');
     grid-column: 1 / -1;
   }
 }
