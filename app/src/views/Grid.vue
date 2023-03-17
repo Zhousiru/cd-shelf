@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import CDCase from '../components/CDCase.vue'
 import Navbar from '../components/Navbar.vue'
+import { getData } from '../data'
+import type { Data } from '../data'
 
 const router = useRouter()
 
@@ -13,6 +16,12 @@ function handleCDClick(cdID: string) {
     },
   })
 }
+
+const data = ref<Data>()
+
+onMounted(async () => {
+  data.value = await getData()
+})
 </script>
 
 <template>
@@ -21,9 +30,9 @@ function handleCDClick(cdID: string) {
     <div class="grid-container">
       <!-- Debug Data -->
       <CDCase
-        v-for="i in 10"
-        :album-art="`/debug/album${(i % 5) + 1}.jpg`"
-        @click="handleCDClick(i.toString())"
+        v-for="album in data"
+        :album-art="album.cover"
+        @click="handleCDClick(album.id)"
       />
     </div>
   </div>

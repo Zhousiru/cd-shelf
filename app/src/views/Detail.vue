@@ -82,8 +82,9 @@ onMounted(async () => {
         <h1 ref="albumNameRef">{{ albumData?.name }}</h1>
         <h2>{{ albumData?.publisher }}</h2>
         <ul class="album-meta">
-          <template v-for="(meta, index) in albumData?.meta">
-            <div class="dot" v-show="index !== 0"></div>
+          <li>发行于 {{ albumData?.year }} 年</li>
+          <template v-for="meta in albumData?.meta">
+            <div class="dot"></div>
             <li>{{ meta }}</li>
           </template>
         </ul>
@@ -111,12 +112,14 @@ onMounted(async () => {
     <div class="float-album-wrapper">
       <div class="float-album" :class="{ visible: floatAlbumVisibility }">
         <div class="album-info">
-          <h1>晴雲秋月</h1>
-          <h2>Sound Refil</h2>
+          <h1>{{ albumData?.name }}</h1>
+          <h2>{{ albumData?.publisher }}</h2>
           <ul class="album-meta">
-            <li>发行于 2015 年</li>
-            <div class="dot"></div>
-            <li>购于骏河屋</li>
+            <li>发行于 {{ albumData?.year }} 年</li>
+            <template v-for="meta in albumData?.meta">
+              <div class="dot"></div>
+              <li>{{ meta }}</li>
+            </template>
           </ul>
         </div>
       </div>
