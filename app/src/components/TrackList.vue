@@ -165,7 +165,7 @@ ol {
       }
 
       .duration {
-        margin-left: 0.8rem;
+        margin-inline: 0.8rem 0.4rem;
         color: rgba(255, 255, 255, 0.4);
         font-size: 1rem;
       }
@@ -176,6 +176,7 @@ ol {
         color: rgba(255, 255, 255, 0.4);
         margin-right: 0.4rem;
         width: 24px;
+        flex-shrink: 0;
       }
     }
 
