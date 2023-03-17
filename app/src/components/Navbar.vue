@@ -52,19 +52,6 @@ async function getPlayingData() {
 watch(() => playerStore.playInfo, getPlayingData, { deep: true })
 
 onMounted(getPlayingData)
-
-function handleNextTrack(step: number) {
-  if (!playingAlbumData.value) {
-    return
-  }
-
-  const len = playingAlbumData.value.track.length
-
-  playerStore.play(
-    playingAlbumData.value.id,
-    (playerStore.playInfo.trackIndex + step + len) % len
-  )
-}
 </script>
 
 <template>
@@ -94,7 +81,7 @@ function handleNextTrack(step: number) {
                 <PlayArrowRound />
               </Icon>
             </button>
-            <button class="control" @click="handleNextTrack(1)">
+            <button class="control" @click="playerStore.next(1)">
               <Icon :size="24">
                 <SkipNextRound />
               </Icon>
@@ -141,7 +128,7 @@ function handleNextTrack(step: number) {
             </div>
           </div>
           <div class="control-area">
-            <button class="control" @click="handleNextTrack(-1)">
+            <button class="control" @click="playerStore.next(-1)">
               <Icon :size="24">
                 <SkipPreviousRound />
               </Icon>
@@ -154,7 +141,7 @@ function handleNextTrack(step: number) {
                 <PlayArrowRound />
               </Icon>
             </button>
-            <button class="control" @click="handleNextTrack(1)">
+            <button class="control" @click="playerStore.next(1)">
               <Icon :size="24">
                 <SkipNextRound />
               </Icon>

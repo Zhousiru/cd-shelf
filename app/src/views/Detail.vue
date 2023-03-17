@@ -67,6 +67,7 @@ function handlePlay(index: number) {
 }
 
 const route = useRoute()
+
 onMounted(async () => {
   const { id } = <{ id: string }>route.params
   albumData.value = (await getData()).find((el) => el.id === id)
