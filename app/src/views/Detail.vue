@@ -9,6 +9,9 @@ import TrackList from '../components/TrackList.vue'
 import type { Album } from '../data'
 import { getData } from '../data'
 import { useRoute } from 'vue-router'
+import { usePlayerStore } from '../stores/player'
+
+const playerStore = usePlayerStore()
 
 const navWidth = inject(gridContentWidth, ref(0))
 const mainWidth = computed(() => {
@@ -51,11 +54,16 @@ onUnmounted(() => {
 })
 
 const albumData = ref<Album>()
-const playing = ref<number>(0)
+
+const playingIndex = computed(() => {
+  if (playerStore.playInfo.albumId === albumData.value?.id) {
+    return playerStore.playInfo.trackIndex
+  }
+  return -1
+})
 
 function handlePlay(index: number) {
-  console.log('Play', index)
-  playing.value = index
+  playerStore.play(albumData.value?.id ?? '', index)
 }
 
 const route = useRoute()
@@ -90,7 +98,7 @@ onMounted(async () => {
         </ul>
       </div>
       <div class="play-button-wrapper">
-        <button class="button-round play-button">
+        <button class="button-round play-button" @click="handlePlay(0)">
           <Icon :size="24">
             <PlayArrowRound />
           </Icon>
@@ -103,7 +111,7 @@ onMounted(async () => {
         </DetailSection>
         <TrackList
           color="rgb(207, 66, 22)"
-          :playing="playing"
+          :playing="playingIndex"
           :data="albumData?.track ?? []"
           @play="handlePlay"
         />

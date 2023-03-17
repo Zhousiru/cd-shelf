@@ -3,19 +3,24 @@ import {
   PlayArrowRound,
   SkipNextRound,
   SkipPreviousRound,
+  PauseRound,
 } from '@vicons/material'
 import { Icon } from '@vicons/utils'
-import { inject, ref } from 'vue'
+import { inject, onMounted, ref, watch } from 'vue'
+import { Album, getData } from '../data'
 import { gridContentWidth } from '../providers'
+import { usePlayerStore } from '../stores/player'
 
 const { dark } = withDefaults(
   defineProps<{
-    dark: boolean
+    dark?: boolean
   }>(),
   {
     dark: false,
   }
 )
+
+const playerStore = usePlayerStore()
 
 const width = inject(gridContentWidth, ref(0))
 const playerVisibility = ref(false)
@@ -35,6 +40,31 @@ function hidePlayer() {
     playerVisibility.value = false
   }, 250)
 }
+
+const playingAlbumData = ref<Album>()
+
+async function getPlayingData() {
+  playingAlbumData.value = (await getData()).find(
+    (album) => album.id === playerStore.playInfo.albumId
+  )
+}
+
+watch(() => playerStore.playInfo, getPlayingData, { deep: true })
+
+onMounted(getPlayingData)
+
+function handleNextTrack(step: number) {
+  if (!playingAlbumData.value) {
+    return
+  }
+
+  const len = playingAlbumData.value.track.length
+
+  playerStore.play(
+    playingAlbumData.value.id,
+    (playerStore.playInfo.trackIndex + step + len) % len
+  )
+}
 </script>
 
 <template>
@@ -50,18 +80,21 @@ function hidePlayer() {
           <div class="sup">指针的</div>
           <div>CD 架</div>
         </div>
-        <div class="mini-player">
+        <div class="mini-player" :class="{ invisible: !playingAlbumData }">
           <div
             class="blur-cover"
-            :style="{ backgroundImage: `url(/debug/album3.jpg)` }"
+            :style="{ backgroundImage: `url(${playingAlbumData?.cover})` }"
           ></div>
           <div class="control-area" :class="{ visible: !playerVisibility }">
-            <button class="control">
-              <Icon :size="24">
+            <button class="control" @click="playerStore.toggle">
+              <Icon :size="24" v-show="playerStore.isPlaying">
+                <PauseRound />
+              </Icon>
+              <Icon :size="24" v-show="!playerStore.isPlaying">
                 <PlayArrowRound />
               </Icon>
             </button>
-            <button class="control">
+            <button class="control" @click="handleNextTrack(1)">
               <Icon :size="24">
                 <SkipNextRound />
               </Icon>
@@ -73,11 +106,15 @@ function hidePlayer() {
             @mouseleave="hidePlayer"
           >
             <div class="play-info" translate="no">
-              <div class="title">雲上の桜花道</div>
+              <div class="title">
+                {{
+                  playingAlbumData?.track[playerStore.playInfo.trackIndex].title
+                }}
+              </div>
               <div class="album-info">
-                <div class="album">桜花爛漫</div>
+                <div class="album">{{ playingAlbumData?.name }}</div>
                 <div class="dot"></div>
-                <div class="artist">Sound Refil</div>
+                <div class="artist">{{ playingAlbumData?.publisher }}</div>
               </div>
             </div>
           </button>
@@ -89,28 +126,35 @@ function hidePlayer() {
         @mouseenter="showPlayer"
         @mouseleave="hidePlayer"
       >
-        <img src="/debug/album3.jpg" />
+        <img :src="playingAlbumData?.cover" />
         <div class="content">
           <div class="play-info">
-            <div class="title">雲上の桜花道</div>
+            <div class="title">
+              {{
+                playingAlbumData?.track[playerStore.playInfo.trackIndex].title
+              }}
+            </div>
             <div class="album-info">
-              <div class="album">桜花爛漫</div>
+              <div class="album">{{ playingAlbumData?.name }}</div>
               <div class="dot"></div>
-              <div class="artist">Sound Refil</div>
+              <div class="artist">{{ playingAlbumData?.publisher }}</div>
             </div>
           </div>
           <div class="control-area">
-            <button class="control">
+            <button class="control" @click="handleNextTrack(-1)">
               <Icon :size="24">
                 <SkipPreviousRound />
               </Icon>
             </button>
-            <button class="control">
-              <Icon :size="24">
+            <button class="control" @click="playerStore.toggle">
+              <Icon :size="24" v-show="playerStore.isPlaying">
+                <PauseRound />
+              </Icon>
+              <Icon :size="24" v-show="!playerStore.isPlaying">
                 <PlayArrowRound />
               </Icon>
             </button>
-            <button class="control">
+            <button class="control" @click="handleNextTrack(1)">
               <Icon :size="24">
                 <SkipNextRound />
               </Icon>
@@ -205,6 +249,12 @@ button.control {
   align-items: center;
   gap: 5px;
   margin-left: auto;
+  transition: opacity 0.2s;
+
+  &.invisible {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   .expand-info {
     padding: 10px;
@@ -230,8 +280,12 @@ button.control {
     z-index: -1;
   }
 
-  .play-info .title {
-    opacity: 0.8;
+  .play-info {
+    width: 160px;
+
+    .title {
+      opacity: 0.8;
+    }
   }
 
   .control-area {
@@ -261,8 +315,17 @@ button.control {
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+
+  .title,
+  .album-info > :is(.album, .artist) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .title {
     font-size: 1.1rem;
+    max-width: 100%;
   }
 
   .album-info {
@@ -271,12 +334,14 @@ button.control {
     display: flex;
     gap: 5px;
     align-items: center;
+    width: 100%;
 
     .dot {
       width: 4px;
       height: 4px;
       border-radius: 2px;
       background-color: $text-in-light;
+      flex-shrink: 0;
 
       @at-root .dark nav & {
         background-color: $text-in-dark;
@@ -299,6 +364,7 @@ button.control {
   opacity: 0;
   transform: translateY(-5%) scale(0.95);
   transition: all 0.2s;
+  width: 250px;
 
   &.visible {
     transform: translateY(0) scale(1);
@@ -309,7 +375,7 @@ button.control {
   img {
     display: block;
     object-fit: cover;
-    height: 250px;
+    width: 100%;
     aspect-ratio: 1;
   }
 
