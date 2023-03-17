@@ -7,6 +7,7 @@ export type Album = {
   year: number
   meta?: string[]
   cover: string
+  color: string
   intro?: string
   track: Array<Track>
 }

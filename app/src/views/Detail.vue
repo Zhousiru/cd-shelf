@@ -6,7 +6,9 @@ import { PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import DetailSection from '../components/DetailSection.vue'
 import TrackList from '../components/TrackList.vue'
-import type { Track } from '../data'
+import type { Album } from '../data'
+import { getData } from '../data'
+import { useRoute } from 'vue-router'
 
 const navWidth = inject(gridContentWidth, ref(0))
 const mainWidth = computed(() => {
@@ -48,141 +50,62 @@ onUnmounted(() => {
   }
 })
 
-const trackData = ref<Array<Track>>([
-  {
-    title: '諷詠',
-    duration: 145,
-    star: true,
-    comment:
-      'test test test test test test test test test test test test test test test test test test',
-    meta: { 编曲: '漉餡', 原曲: '不思議なお祓い棒' },
-    source: '',
-  },
-  {
-    title: '汀',
-    duration: 214,
-    star: true,
-    comment:
-      'test test test test test test test test test test test test test test test test test test',
-    meta: {
-      编曲: '漉餡',
-      演唱: 'Laco.',
-      作詞: '鷹野友紀',
-      原曲: 'ミストレイク',
-    },
-    source: '',
-  },
-  {
-    title: '柳ニ風',
-    duration: 209,
-    star: false,
-    comment: '',
-    meta: { 编曲: '漉餡', 原曲: '柳の下のデュラハン' },
-    source: '',
-  },
-  {
-    title: '蒼月夜',
-    duration: 329,
-    star: false,
-    comment: '',
-    meta: {
-      编曲: '漉餡',
-      演唱: 'Laco.',
-      作詞: '鷹野友紀',
-      原曲: '満月の竹林',
-    },
-    source: '',
-  },
-  {
-    title: '鬼謳',
-    duration: 231,
-    star: false,
-    comment: '',
-    meta: {
-      编曲: 'RD-Sounds',
-      原曲: 'リバースイデオロギー',
-    },
-    source: '',
-  },
-  {
-    title: '敢闘 -little bravery-',
-    duration: 205,
-    star: false,
-    comment: '',
-    meta: {
-      编曲: '漉餡',
-      原曲: '輝く針の小人族 ~ Little Princess',
-    },
-    source: '',
-  },
-  {
-    title: '汀 (Instrumental ver)',
-    duration: 214,
-    star: true,
-    comment: '',
-    meta: { 编曲: '漉餡', 原曲: 'ミストレイク' },
-    source: '',
-  },
-  {
-    title: '蒼月夜 (Instrumental ver)',
-    duration: 328,
-    star: true,
-    comment: '',
-    meta: { 编曲: '漉餡', 原曲: '満月の竹林' },
-    source: '',
-  },
-])
+const albumData = ref<Album>()
 const playing = ref<number>(0)
+
 function handlePlay(index: number) {
   console.log('Play', index)
   playing.value = index
 }
+
+const route = useRoute()
+onMounted(async () => {
+  const { id } = <{ id: string }>route.params
+  albumData.value = (await getData()).find((el) => el.id === id)
+  if (!albumData.value) {
+    alert('debug: 404')
+    return
+  }
+})
 </script>
 
 <template>
   <div class="background">
-    <div
-      class="cover"
-      :style="{
-        backgroundImage: `url(/debug/album1.jpg)`,
-      }"
-    ></div>
+    <div class="cover"></div>
     <div class="overlay"></div>
   </div>
   <div class="container">
     <Navbar dark />
     <div class="detail-wrapper">
-      <img class="album-cover" src="/debug/album1.jpg" />
+      <img class="album-cover" :src="albumData?.cover" />
       <div class="album-info">
-        <h1 ref="albumNameRef">晴雲秋月</h1>
-        <h2>Sound Refil</h2>
+        <h1 ref="albumNameRef">{{ albumData?.name }}</h1>
+        <h2>{{ albumData?.publisher }}</h2>
         <ul class="album-meta">
-          <li>发行于 2015 年</li>
-          <div class="dot"></div>
-          <li>购于骏河屋</li>
+          <template v-for="(meta, index) in albumData?.meta">
+            <div class="dot" v-show="index !== 0"></div>
+            <li>{{ meta }}</li>
+          </template>
         </ul>
       </div>
       <div class="play-button-wrapper">
-        <button
-          class="button-round"
-          :style="{ backgroundColor: 'rgb(207, 66, 22)' }"
-        >
+        <button class="button-round play-button">
           <Icon :size="24">
             <PlayArrowRound />
           </Icon>
         </button>
       </div>
       <div class="detail">
+        <DetailSection>
+          <template #title>Intro</template>
+          <div v-html="albumData?.intro" class="intro-content"></div>
+        </DetailSection>
         <TrackList
           color="rgb(207, 66, 22)"
           :playing="playing"
-          :data="trackData"
+          :data="albumData?.track ?? []"
           @play="handlePlay"
         />
-        <DetailSection v-for="i in 10">
-          <template #title>Intro</template>
-          介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。
-        </DetailSection>
       </div>
     </div>
     <div class="float-album-wrapper">
@@ -237,6 +160,7 @@ $normal-cover-size: 350px;
   }
 
   .cover {
+    background-image: v-bind('"url("+albumData?.cover+")"');
     background-size: cover;
     filter: blur(40px);
     transform: scale(1.2); // Fix mobile browser navigator gap.
@@ -335,6 +259,10 @@ $normal-cover-size: 350px;
 
 .play-button-wrapper {
   align-self: center;
+
+  .play-button {
+    background-color: v-bind('albumData?.color');
+  }
 }
 
 .float-album-wrapper {
@@ -383,10 +311,15 @@ $normal-cover-size: 350px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 15vh;
 
   @media (max-width: $breakpoint-lg) {
     width: v-bind('navWidth + "px"');
     grid-column: 1 / -1;
   }
+}
+
+.intro-content {
+  padding: 1rem;
 }
 </style>

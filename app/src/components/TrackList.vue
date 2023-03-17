@@ -43,6 +43,12 @@ function toggleExpand(index: number) {
   setExpandedHeight()
 }
 
+function humanizeDuration(sec: number): string {
+  const m = Math.floor(sec / 60)
+  const s = (sec % 60).toString().padStart(2, '0')
+  return `${m}:${s}`
+}
+
 onMounted(() => {
   window.addEventListener('resize', setExpandedHeight)
 })
@@ -73,6 +79,9 @@ onUnmounted(() => {
           <div class="title">
             {{ track.title }}
           </div>
+          <div class="duration">
+            {{ humanizeDuration(track.duration) }}
+          </div>
           <div class="count">
             <Icon :size="24">
               <NumbersRound />
@@ -89,7 +98,7 @@ onUnmounted(() => {
             </template>
           </ul>
           <div class="comment" v-show="track.comment !== ''">
-            {{ track.comment }}
+            <div v-html="track.comment"></div>
           </div>
           <button class="button-round play-button" @click="emit('play', index)">
             <Icon :size="24">
@@ -153,6 +162,12 @@ ol {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+      }
+
+      .duration {
+        margin-left: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 1rem;
       }
 
       .badge {
