@@ -4,7 +4,9 @@ import Player from './components/Player.vue'
 </script>
 
 <template>
-  <Player />
+  <KeepAlive>
+    <Player />
+  </KeepAlive>
   <GridContentWidthProvider>
     <RouterView />
   </GridContentWidthProvider>
