@@ -6,6 +6,7 @@ import { PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import DetailSection from '../components/DetailSection.vue'
 import TrackList from '../components/TrackList.vue'
+import type { Track } from '../data'
 
 const navWidth = inject(gridContentWidth, ref(0))
 const mainWidth = computed(() => {
@@ -46,6 +47,96 @@ onUnmounted(() => {
     observer.disconnect()
   }
 })
+
+const trackData = ref<Array<Track>>([
+  {
+    title: '諷詠',
+    duration: 145,
+    star: true,
+    comment:
+      'test test test test test test test test test test test test test test test test test test',
+    meta: { 编曲: '漉餡', 原曲: '不思議なお祓い棒' },
+    source: '',
+  },
+  {
+    title: '汀',
+    duration: 214,
+    star: true,
+    comment:
+      'test test test test test test test test test test test test test test test test test test',
+    meta: {
+      编曲: '漉餡',
+      演唱: 'Laco.',
+      作詞: '鷹野友紀',
+      原曲: 'ミストレイク',
+    },
+    source: '',
+  },
+  {
+    title: '柳ニ風',
+    duration: 209,
+    star: false,
+    comment: '',
+    meta: { 编曲: '漉餡', 原曲: '柳の下のデュラハン' },
+    source: '',
+  },
+  {
+    title: '蒼月夜',
+    duration: 329,
+    star: false,
+    comment: '',
+    meta: {
+      编曲: '漉餡',
+      演唱: 'Laco.',
+      作詞: '鷹野友紀',
+      原曲: '満月の竹林',
+    },
+    source: '',
+  },
+  {
+    title: '鬼謳',
+    duration: 231,
+    star: false,
+    comment: '',
+    meta: {
+      编曲: 'RD-Sounds',
+      原曲: 'リバースイデオロギー',
+    },
+    source: '',
+  },
+  {
+    title: '敢闘 -little bravery-',
+    duration: 205,
+    star: false,
+    comment: '',
+    meta: {
+      编曲: '漉餡',
+      原曲: '輝く針の小人族 ~ Little Princess',
+    },
+    source: '',
+  },
+  {
+    title: '汀 (Instrumental ver)',
+    duration: 214,
+    star: true,
+    comment: '',
+    meta: { 编曲: '漉餡', 原曲: 'ミストレイク' },
+    source: '',
+  },
+  {
+    title: '蒼月夜 (Instrumental ver)',
+    duration: 328,
+    star: true,
+    comment: '',
+    meta: { 编曲: '漉餡', 原曲: '満月の竹林' },
+    source: '',
+  },
+])
+const playing = ref<number>(0)
+function handlePlay(index: number) {
+  console.log('Play', index)
+  playing.value = index
+}
 </script>
 
 <template>
@@ -82,7 +173,12 @@ onUnmounted(() => {
         </button>
       </div>
       <div class="detail">
-        <TrackList />
+        <TrackList
+          color="rgb(207, 66, 22)"
+          :playing="playing"
+          :data="trackData"
+          @play="handlePlay"
+        />
         <DetailSection v-for="i in 10">
           <template #title>Intro</template>
           介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。介绍介绍，介绍介绍介绍，介绍。

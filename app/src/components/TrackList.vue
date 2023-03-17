@@ -3,91 +3,15 @@ import { NumbersRound, StarRound, PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import { onMounted, onUnmounted, ref } from 'vue'
 import DetailSection from './DetailSection.vue'
+import type { Track } from '../data'
 
-const data = ref([
-  {
-    title: '諷詠',
-    duration: 145,
-    star: true,
-    comment:
-      'test test test test test test test test test test test test test test test test test test',
-    meta: { 编曲: '漉餡', 原曲: '不思議なお祓い棒' },
-    source: '',
-  },
-  {
-    title: '汀',
-    duration: 214,
-    star: true,
-    comment:
-      'test test test test test test test test test test test test test test test test test test',
-    meta: {
-      编曲: '漉餡',
-      演唱: 'Laco.',
-      作詞: '鷹野友紀',
-      原曲: 'ミストレイク',
-    },
-    source: '',
-  },
-  {
-    title: '柳ニ風',
-    duration: 209,
-    star: false,
-    comment: '',
-    meta: { 编曲: '漉餡', 原曲: '柳の下のデュラハン' },
-    source: '',
-  },
-  {
-    title: '蒼月夜',
-    duration: 329,
-    star: false,
-    comment: '',
-    meta: {
-      编曲: '漉餡',
-      演唱: 'Laco.',
-      作詞: '鷹野友紀',
-      原曲: '満月の竹林',
-    },
-    source: '',
-  },
-  {
-    title: '鬼謳',
-    duration: 231,
-    star: false,
-    comment: '',
-    meta: {
-      编曲: 'RD-Sounds',
-      原曲: 'リバースイデオロギー',
-    },
-    source: '',
-  },
-  {
-    title: '敢闘 -little bravery-',
-    duration: 205,
-    star: false,
-    comment: '',
-    meta: {
-      编曲: '漉餡',
-      原曲: '輝く針の小人族 ~ Little Princess',
-    },
-    source: '',
-  },
-  {
-    title: '汀 (Instrumental ver)',
-    duration: 214,
-    star: true,
-    comment: '',
-    meta: { 编曲: '漉餡', 原曲: 'ミストレイク' },
-    source: '',
-  },
-  {
-    title: '蒼月夜 (Instrumental ver)',
-    duration: 328,
-    star: true,
-    comment: '',
-    meta: { 编曲: '漉餡', 原曲: '満月の竹林' },
-    source: '',
-  },
-])
+const { data, playing, color } = defineProps<{
+  data: Array<Track>
+  playing: number
+  color: string
+}>()
+const emit = defineEmits<{ (e: 'play', index: number): void }>()
+
 const trackListRef = ref<Record<number, HTMLOListElement>>({})
 const expanded = ref<{
   index: number
@@ -96,7 +20,6 @@ const expanded = ref<{
   index: -1,
   height: -1,
 })
-const nowPlaying = ref<number>(0)
 
 function setExpandedHeight() {
   if (expanded.value.index === -1) {
@@ -137,7 +60,7 @@ onUnmounted(() => {
         v-for="(track, index) in data"
         :class="{
           active: index === expanded.index,
-          playing: index === nowPlaying,
+          playing: index === playing,
         }"
         :ref="(el) => (trackListRef[index] = el as HTMLOListElement)"
       >
@@ -168,10 +91,7 @@ onUnmounted(() => {
           <div class="comment" v-show="track.comment !== ''">
             {{ track.comment }}
           </div>
-          <button
-            class="button-round play-button"
-            :style="{ backgroundColor: 'rgb(207, 66, 22)' }"
-          >
+          <button class="button-round play-button" @click="emit('play', index)">
             <Icon :size="24">
               <PlayArrowRound />
             </Icon>
@@ -263,7 +183,7 @@ ol {
       &::after {
         content: '';
         position: absolute;
-        background-color: rgb(207, 66, 22);
+        background-color: v-bind(color);
         left: 0;
         inset-block: 0;
         width: 2px;
@@ -297,5 +217,6 @@ ol {
 .play-button {
   width: 36px;
   height: 36px;
+  background-color: v-bind(color);
 }
 </style>
