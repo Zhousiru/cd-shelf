@@ -7,7 +7,7 @@
     "meta": ["购于骏河屋", "无损抓轨"],
     "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/seigenshu/cover.jpg",
     "color": "#e24321",
-    "intro": "<p>好耶！是 Sound Refil 的和风专！<br>封面椛椛可爱得很呐 (*/ω＼*)</p>",
+    "intro": "<p>好耶！是 Sound Refil 的和风专！<br>封面椛椛可爱得很呐 (*/ω＼*)</p><p>底封可以看出椛椛右手牵着河童</p>",
     "track": [
       {
         "title": "祭祀継承",
@@ -52,7 +52,7 @@
         "star": false,
         "comment": "<p>是一首快节奏的众神眷恋的幻想乡。</p>",
         "meta": { "编曲": "SHiNKA", "原曲": "神々が恋した幻想郷" },
-        "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/seigenshu/04%20%E7%A7%A3%E6%9C%AC%E7%91%B3%E7%BD%97%20-%20%E8%BF%BD%E6%83%B3.flac"
+        "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/seigenshu/05%20SHiNKA%20-%20%E5%B9%BB%E6%83%B3%E7%AF%80.flac"
       },
       {
         "title": "河童ノ輪舞曲",
@@ -76,7 +76,7 @@
           "编曲": "たくろす",
           "原曲": "さくらさくら ～ Japanize Dream... 等"
         },
-        "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/seigenshu/06%20%E3%82%81%E3%82%89%E3%81%BF%E3%81%BD%E3%81%A3%E3%81%B7%20-%20%E6%B2%B3%E7%AB%A5%E3%83%8E%E8%BC%AA%E8%88%9E%E6%9B%B2.flac"
+        "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/seigenshu/07%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E6%A1%9C%E8%88%9E%E7%A5%AD.flac"
       },
       {
         "title": "花信風",
