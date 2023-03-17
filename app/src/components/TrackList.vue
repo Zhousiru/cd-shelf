@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NumbersRound } from '@vicons/material'
+import { NumbersRound, StarRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import { onMounted, onUnmounted, ref } from 'vue'
 import DetailSection from './DetailSection.vue'
@@ -8,16 +8,18 @@ const data = ref([
   {
     title: '諷詠',
     duration: 145,
-    star: false,
-    comment: '',
+    star: true,
+    comment:
+      'test test test test test test test test test test test test test test test test test test',
     meta: { 编曲: '漉餡', 原曲: '不思議なお祓い棒' },
     source: '',
   },
   {
     title: '汀',
     duration: 214,
-    star: false,
-    comment: '',
+    star: true,
+    comment:
+      'test test test test test test test test test test test test test test test test test test',
     meta: {
       编曲: '漉餡',
       演唱: 'Laco.',
@@ -72,7 +74,7 @@ const data = ref([
   {
     title: '汀 (Instrumental ver)',
     duration: 214,
-    star: false,
+    star: true,
     comment: '',
     meta: { 编曲: '漉餡', 原曲: 'ミストレイク' },
     source: '',
@@ -80,7 +82,7 @@ const data = ref([
   {
     title: '蒼月夜 (Instrumental ver)',
     duration: 328,
-    star: false,
+    star: true,
     comment: '',
     meta: { 编曲: '漉餡', 原曲: '満月の竹林' },
     source: '',
@@ -94,6 +96,7 @@ const expanded = ref<{
   index: -1,
   height: -1,
 })
+const nowPlaying = ref<number>(0)
 
 function setExpandedHeight() {
   if (expanded.value.index === -1) {
@@ -132,17 +135,27 @@ onUnmounted(() => {
     <ol>
       <li
         v-for="(track, index) in data"
-        :class="{ active: index === expanded.index }"
+        :class="{
+          active: index === expanded.index,
+          playing: index === nowPlaying,
+        }"
         :ref="(el) => (trackListRef[index] = el as HTMLOListElement)"
       >
         <div class="header" @click="toggleExpand(index)">
+          <div class="badge">
+            <Icon :size="24" v-show="track.star">
+              <StarRound />
+            </Icon>
+          </div>
+          <div class="title">
+            {{ track.title }}
+          </div>
           <div class="count">
             <Icon :size="24">
               <NumbersRound />
             </Icon>
             {{ index + 1 }}
           </div>
-          {{ track.title }}
         </div>
         <div class="content">
           <ul class="meta">
@@ -152,6 +165,9 @@ onUnmounted(() => {
               </li>
             </template>
           </ul>
+          <div class="comment" v-show="track.comment !== ''">
+            {{ track.comment }}
+          </div>
         </div>
       </li>
     </ol>
@@ -182,7 +198,6 @@ ol {
       height: $title-height;
       display: flex;
       align-items: center;
-      gap: 0.8rem;
       cursor: pointer;
       transition: background-color 0.2s;
       padding-inline: 0.5rem;
@@ -200,16 +215,55 @@ ol {
         font-weight: 500;
         line-height: 24px;
         color: rgba(255, 255, 255, 0.4);
+        margin-left: auto;
+        user-select: none;
+      }
+
+      .title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .badge {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.4);
+        margin-right: 0.4rem;
+        width: 24px;
       }
     }
 
     .content {
       border-top: $split-border;
-      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      padding: 0.8rem 1.6rem;
+      gap: 0.8rem;
     }
 
     &.active {
       height: calc($title-height + v-bind('expanded.height + "px"'));
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: rgb(207, 66, 22);
+        left: 0;
+        inset-block: 0;
+        width: 2px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    }
+
+    &.playing .header::after {
+      opacity: 1;
     }
   }
 }
@@ -219,24 +273,14 @@ ol {
   list-style-type: none;
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
-  gap: 1.6rem;
-  row-gap: 1.6rem;
+  gap: 0.8rem 1.6rem;
   padding: 0;
   margin: 0;
   align-items: center;
   flex-wrap: wrap;
+}
 
-  li:not(:last-child) {
-    position: relative;
-
-    &::after {
-      content: '/';
-      position: absolute;
-      right: -0.8rem;
-      top: 50%;
-      transform: translate(50%, -50%);
-      font-size: 0.8rem;
-    }
-  }
+.comment {
+  font-size: 1.2rem;
 }
 </style>
