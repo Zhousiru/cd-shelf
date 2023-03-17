@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NumbersRound, StarRound } from '@vicons/material'
+import { NumbersRound, StarRound, PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import { onMounted, onUnmounted, ref } from 'vue'
 import DetailSection from './DetailSection.vue'
@@ -168,6 +168,14 @@ onUnmounted(() => {
           <div class="comment" v-show="track.comment !== ''">
             {{ track.comment }}
           </div>
+          <button
+            class="button-round play-button"
+            :style="{ backgroundColor: 'rgb(207, 66, 22)' }"
+          >
+            <Icon :size="24">
+              <PlayArrowRound />
+            </Icon>
+          </button>
         </div>
       </li>
     </ol>
@@ -175,6 +183,8 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
+@import '../styles/button.scss';
+
 ol {
   display: flex;
   margin: 0;
@@ -282,5 +292,10 @@ ol {
 
 .comment {
   font-size: 1.2rem;
+}
+
+.play-button {
+  width: 36px;
+  height: 36px;
 }
 </style>

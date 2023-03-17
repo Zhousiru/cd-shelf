@@ -72,7 +72,10 @@ onUnmounted(() => {
         </ul>
       </div>
       <div class="play-button-wrapper">
-        <button class="play" :style="{ backgroundColor: 'rgb(207, 66, 22)' }">
+        <button
+          class="button-round"
+          :style="{ backgroundColor: 'rgb(207, 66, 22)' }"
+        >
           <Icon :size="24">
             <PlayArrowRound />
           </Icon>
@@ -104,6 +107,8 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 @import '../styles/grid.scss';
+@import '../styles/button.scss';
+
 $navbar-gap: 80px;
 $grid-row-gap: 2rem;
 $grid-col-gap: 5rem;
@@ -234,34 +239,6 @@ $normal-cover-size: 350px;
 
 .play-button-wrapper {
   align-self: center;
-
-  button.play {
-    border: none;
-    width: 150px;
-    height: 50px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: rgba(255, 255, 255, 0.1);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    &:hover::after {
-      opacity: 1;
-    }
-  }
 }
 
 .float-album-wrapper {
