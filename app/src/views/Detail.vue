@@ -256,7 +256,7 @@ $normal-cover-size: 350px;
     display: flex;
     list-style-type: none;
     gap: 0.5rem;
-    font-weight: 100;
+    font-weight: 300;
     align-items: center;
     color: rgba(255, 255, 255, 0.6);
 

@@ -14,3 +14,12 @@ button {
 ::selection {
   background-color: rgba(180, 180, 180, 0.5);
 }
+
+#nprogress {
+  .bar {
+    background-color: #a6acb7;
+  }
+  .peg {
+    box-shadow: 0 0 10px #a6acb7, 0 0 5px #a6acb7;
+  }
+}

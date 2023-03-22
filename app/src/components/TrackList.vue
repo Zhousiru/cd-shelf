@@ -233,6 +233,7 @@ ol {
 .play-button {
   width: 36px;
   height: 36px;
+  padding: 0;
   background-color: v-bind(color);
 }
 </style>

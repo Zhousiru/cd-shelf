@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createPinia } from 'pinia'
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import routes from './routes'
 
 import App from './App.vue'
@@ -13,6 +16,19 @@ const app = createApp(App)
 const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+NProgress.configure({ showSpinner: false })
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    NProgress.start()
+  }
+  next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })
 
 const pinia = createPinia()
