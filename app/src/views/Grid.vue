@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import CDCase from '../components/CDCase.vue'
 import Navbar from '../components/Navbar.vue'
 import { getData } from '../data'
