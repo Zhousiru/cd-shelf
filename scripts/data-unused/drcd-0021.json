@@ -1,0 +1,116 @@
+{
+  "name": "少女救世論",
+  "id": "drcd-0021",
+  "publisher": "暁Records",
+  "year": 2017,
+  "meta": ["购于Melonbooks"],
+  "cover": "",
+  "color": "",
+  "intro": "",
+  "track": [
+    {
+      "title": "少女救世論",
+      "duration": 217,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Stack Bros.",
+        "演唱": "Stack",
+        "作词": "Stack",
+        "原曲": "少女綺想曲 ～ Dream Battle 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "トレジャーチルノ",
+      "duration": 254,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "ACTRock",
+        "演唱": "Stack",
+        "作词": "ACTRock",
+        "原曲": "おてんば恋娘"
+      },
+      "source": ""
+    },
+    {
+      "title": "幽鬼傀儡、あるいはその愛と再生",
+      "duration": 294,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Stack Bros.",
+        "演唱": "Stack",
+        "作词": "Stack",
+        "原曲": "古きユアンシェン 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "Lalala, Seek a Fever",
+      "duration": 198,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "ねこ☆まんじゅう",
+        "演唱": "Stack",
+        "作词": "Stack",
+        "原曲": "春の湊に"
+      },
+      "source": ""
+    },
+    {
+      "title": "Supernova",
+      "duration": 210,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Stack Bros.",
+        "演唱": "Stack",
+        "作词": "Stack",
+        "原曲": "ヴォヤージュ1969 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "CAT HAND",
+      "duration": 224,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "ACTRock",
+        "演唱": "Stack",
+        "作词": "ACTRock",
+        "原曲": "遠野幻想物語"
+      },
+      "source": ""
+    },
+    {
+      "title": "縁 ～ Spring has come at last",
+      "duration": 223,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Stack Bros.",
+        "演唱": "Stack",
+        "作词": "Stack",
+        "原曲": "妖々跋扈 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "Lullaby for Lost child",
+      "duration": 269,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "ねこ☆まんじゅう",
+        "演唱": "Stack",
+        "作词": "Stack",
+        "原曲": "the Grimoire of Alice 等"
+      },
+      "source": ""
+    }
+  ]
+}

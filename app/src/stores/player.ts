@@ -1,6 +1,6 @@
+import { Album, getAlbumDetail } from '@/data'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { getData } from '../data'
 
 export const usePlayerStore = defineStore('player', () => {
   const playInfo = ref<{
@@ -11,8 +11,13 @@ export const usePlayerStore = defineStore('player', () => {
     trackIndex: -1,
   })
   const isPlaying = ref(false)
+  const albumData = ref<null | Promise<Album>>(null)
 
-  function play(id: string, index: number) {
+  async function play(id: string, index: number) {
+    if (id !== playInfo.value.albumId) {
+      albumData.value = getAlbumDetail(id)
+    }
+
     playInfo.value.albumId = id
     playInfo.value.trackIndex = index
     isPlaying.value = true
@@ -23,18 +28,15 @@ export const usePlayerStore = defineStore('player', () => {
   }
 
   async function next(step: number) {
-    const albumData = (await getData()).find(
-      (album) => album.id === playInfo.value.albumId
-    )
-
-    if (!albumData) {
+    const data = await albumData.value
+    if (!data) {
       return
     }
 
-    const len = albumData.track.length
+    const len = data.track.length
 
     play(playInfo.value.albumId, (playInfo.value.trackIndex + step + len) % len)
   }
 
-  return { playInfo, isPlaying, play, toggle, next }
+  return { playInfo, isPlaying, albumData, play, toggle, next }
 })

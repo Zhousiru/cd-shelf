@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { albumArt, animation } = withDefaults(
+const props = withDefaults(
   defineProps<{
     albumArt: string
     animation?: boolean
@@ -11,7 +11,7 @@ const { albumArt, animation } = withDefaults(
 </script>
 
 <template>
-  <div class="cd-case" :class="{ animation }">
+  <div class="cd-case" :class="{ animation: props.animation }">
     <div class="cd-shadow"></div>
     <div class="cover cover-shadow"></div>
     <div class="cover"></div>
@@ -29,7 +29,7 @@ const { albumArt, animation } = withDefaults(
 }
 
 .cd-case > .case-mask {
-  background-image: url(../assets/images/case.webp);
+  background-image: url(@/assets/images/case.webp);
   background-size: cover;
   position: absolute;
   inset: 0;
@@ -38,7 +38,7 @@ const { albumArt, animation } = withDefaults(
 
 .cd-case > .cover,
 .cd-case > .cd-shadow {
-  background-image: v-bind('"url(" + albumArt + ")"');
+  background-image: v-bind('"url(" + props.albumArt + ")"');
 }
 
 .cd-case > .cover {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, provide, ref } from 'vue'
-import { gridContentWidth } from '../providers'
+import { gridContentWidth } from '@/providers'
 
 const width = ref(0)
 const testerRef = ref<HTMLDivElement | null>(null)
@@ -35,7 +35,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import '../styles/grid.scss';
+@import '@/styles/grid.scss';
 
 .grid-content-width-provider {
   position: absolute;

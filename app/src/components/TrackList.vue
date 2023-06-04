@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { NumbersRound, StarRound, PlayArrowRound } from '@vicons/material'
+import DetailSection from '@/components/DetailSection.vue'
+import type { Track } from '@/data'
+import { NumbersRound, PlayArrowRound, StarRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import { onMounted, onUnmounted, ref } from 'vue'
-import DetailSection from './DetailSection.vue'
-import type { Track } from '../data'
 
-const { data, playing, color } = defineProps<{
-  data: Array<Track>
-  playing: number
-  color: string
-}>()
+const props = withDefaults(
+  defineProps<{
+    data: Array<Track>
+    playing: number
+    color?: string
+  }>(),
+  { color: '#ffffff' }
+)
 const emit = defineEmits<{ (e: 'play', index: number): void }>()
 
 const trackListRef = ref<Record<number, HTMLOListElement>>({})
@@ -63,10 +66,10 @@ onUnmounted(() => {
     <template #title>Tracks</template>
     <ol>
       <li
-        v-for="(track, index) in data"
+        v-for="(track, index) in props.data"
         :class="{
           active: index === expanded.index,
-          playing: index === playing,
+          playing: index === props.playing,
         }"
         :ref="(el) => (trackListRef[index] = el as HTMLOListElement)"
       >
@@ -112,7 +115,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@import '../styles/button.scss';
+@import '@/styles/button.scss';
 
 ol {
   display: flex;
@@ -199,7 +202,7 @@ ol {
       &::after {
         content: '';
         position: absolute;
-        background-color: v-bind(color);
+        background-color: v-bind('props.color');
         left: 0;
         inset-block: 0;
         width: 2px;

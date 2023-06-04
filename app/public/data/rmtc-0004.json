@@ -1,0 +1,76 @@
+{
+  "name": "幽趣佳境",
+  "id": "rmtc-0004",
+  "publisher": "流派未月亭",
+  "year": 2016,
+  "meta": ["购于骏河屋", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/cover.jpg",
+  "color": "#4075b9",
+  "intro": "",
+  "track": [
+    {
+      "title": "行雲流水",
+      "duration": 265,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "たくろす", "原曲": "幻想浄瑠璃" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/01%20%E8%A1%8C%E9%9B%B2%E6%B5%81%E6%B0%B4.flac"
+    },
+    {
+      "title": "天狗囃子",
+      "duration": 387,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "権太夫", "原曲": "妖怪の山 ～ Mysterious Mountain" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/02%20%E5%A4%A9%E7%8B%97%E5%9B%83%E5%AD%90.flac"
+    },
+    {
+      "title": "寂寥蛍",
+      "duration": 244,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "漉餡", "原曲": "蠢々秋月 ～ Mooned Insect" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/03%20%E5%AF%82%E5%AF%A5%E8%9B%8D.flac"
+    },
+    {
+      "title": "丁夜ノ舞",
+      "duration": 277,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "漉餡", "原曲": "砕月" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/03%20%E5%AF%82%E5%AF%A5%E8%9B%8D.flac"
+    },
+    {
+      "title": "すかびおさ",
+      "duration": 297,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "漉餡", "原曲": "今昔幻想郷 ～ Flower Land" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/05%20%E3%81%99%E3%81%8B%E3%81%B3%E3%81%8A%E3%81%95.flac"
+    },
+    {
+      "title": "爛漫",
+      "duration": 214,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "漉餡", "原曲": "有頂天変 ～ Wonderful Heaven" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/06%20%E7%88%9B%E6%BC%AB.flac"
+    },
+    {
+      "title": "慕情",
+      "duration": 201,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "漉餡", "原曲": "デザイアドライブ" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/07%20%E6%85%95%E6%83%85.flac"
+    },
+    {
+      "title": "Good Old Memories",
+      "duration": 365,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "いか消し", "原曲": "湖は浄めの月光を映して" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmtc-0004/08%20Good%20Old%20Memories.flac"
+    }
+  ]
+}

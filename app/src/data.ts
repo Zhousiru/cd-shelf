@@ -1,4 +1,9 @@
-export type Data = Array<Album>
+export type Index = {
+  name: string
+  id: string
+  publisher: string
+  cover: string
+}
 
 export type Album = {
   name: string
@@ -17,23 +22,20 @@ export type Track = {
   duration: number
   star: boolean
   comment?: string
-  meta?: {
-    [key: string]: string
-  }
+  meta?: Record<string, string>
   source: string
 }
 
-export async function getData(): Promise<Data> {
-  const cached = localStorage.getItem('data')
+export async function getIndex(): Promise<Array<Index>> {
+  const res = await fetch('/data/index.json', { cache: 'force-cache' })
+  const resText = await res.text()
 
-  if (!cached) {
-    const res = await fetch('/data.json')
-    const resText = await res.text()
+  return JSON.parse(resText)
+}
 
-    localStorage.setItem('data', resText)
+export async function getAlbumDetail(id: string): Promise<Album> {
+  const res = await fetch(`/data/${id}.json`, { cache: 'force-cache' })
+  const resText = await res.text()
 
-    return JSON.parse(resText)
-  }
-
-  return JSON.parse(cached)
+  return JSON.parse(resText)
 }

@@ -1,0 +1,84 @@
+{
+  "name": "緋萃のシンフォニック・スイート",
+  "id": "mtcd-0022",
+  "publisher": "Melodic Taste",
+  "year": 2016,
+  "meta": ["购于骏河屋", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/cover.jpg",
+  "color": "#976f93",
+  "intro": "",
+  "track": [
+    {
+      "title": "東方萃夢想",
+      "duration": 219,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "みなも", "原曲": "東方萃夢想" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/01%20%E6%9D%B1%E6%96%B9%E8%90%83%E5%A4%A2%E6%83%B3.flac"
+    },
+    {
+      "title": "珍客",
+      "duration": 201,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "パポス", "原曲": "珍客" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/02%20%E7%8F%8D%E5%AE%A2.flac"
+    },
+    {
+      "title": "魔女達の舞踏会",
+      "duration": 188,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "パポス", "原曲": "魔女達の舞踏会" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/03%20%E9%AD%94%E5%A5%B3%E9%81%94%E3%81%AE%E8%88%9E%E8%B8%8F%E4%BC%9A.flac"
+    },
+    {
+      "title": "Demystify Feast",
+      "duration": 174,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "あいざわ", "原曲": "Demystify Feast" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/04%20Demystify%20Feast.flac"
+    },
+    {
+      "title": "砕月",
+      "duration": 134,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "砕月" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/05%20%E7%A0%95%E6%9C%88.flac"
+    },
+    {
+      "title": "黒い海に紅く",
+      "duration": 205,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "黒い海に紅く ～ Legendary Fish" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/06%20%E9%BB%92%E3%81%84%E6%B5%B7%E3%81%AB%E7%B4%85%E3%81%8F.flac"
+    },
+    {
+      "title": "天衣無縫",
+      "duration": 151,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "天衣無縫" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/07%20%E5%A4%A9%E8%A1%A3%E7%84%A1%E7%B8%AB.flac"
+    },
+    {
+      "title": "有頂天変",
+      "duration": 213,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "有頂天変 ～ Wonderful Heaven" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/08%20%E6%9C%89%E9%A0%82%E5%A4%A9%E5%A4%89.flac"
+    },
+    {
+      "title": "東方緋想天",
+      "duration": 280,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "みなも", "原曲": "東方緋想天" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/09%20%E6%9D%B1%E6%96%B9%E7%B7%8B%E6%83%B3%E5%A4%A9.flac"
+    }
+  ]
+}

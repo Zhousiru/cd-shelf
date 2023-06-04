@@ -1,0 +1,87 @@
+{
+  "name": "空色のシンフォニック・スイート",
+  "id": "mtcd-0021",
+  "publisher": "Melodic Taste",
+  "year": 2016,
+  "meta": ["购于骏河屋", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/cover.jpg",
+  "color": "#004e9d",
+  "intro": "",
+  "track": [
+    {
+      "title": "天空のグリニッジ",
+      "duration": 252,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "みなも", "原曲": "天空のグリニッジ" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/01%20%E5%A4%A9%E7%A9%BA%E3%81%AE%E3%82%B0%E3%83%AA%E3%83%8B%E3%83%83%E3%82%B8.flac"
+    },
+    {
+      "title": "車椅子の未来宇宙",
+      "duration": 176,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "車椅子の未来宇宙" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/02%20%E8%BB%8A%E6%A4%85%E5%AD%90%E3%81%AE%E6%9C%AA%E6%9D%A5%E5%AE%87%E5%AE%99.flac"
+    },
+    {
+      "title": "ヒロシゲ 36 号",
+      "duration": 182,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "あいざわ",
+        "原曲": "ヒロシゲ36号 ～ Neo Super-Express"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/03%20%E3%83%92%E3%83%AD%E3%82%B7%E3%82%B2%2036%20%E5%8F%B7.flac"
+    },
+    {
+      "title": "53 ミニッツの青い海",
+      "duration": 280,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "パポス", "原曲": "53ミニッツの青い海" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/04%2053%20%E3%83%9F%E3%83%8B%E3%83%83%E3%83%84%E3%81%AE%E9%9D%92%E3%81%84%E6%B5%B7.flac"
+    },
+    {
+      "title": "青木ヶ原の伝説",
+      "duration": 195,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "青木ヶ原の伝説" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/05%20%E9%9D%92%E6%9C%A8%E3%83%B6%E5%8E%9F%E3%81%AE%E4%BC%9D%E8%AA%AC.flac"
+    },
+    {
+      "title": "最も澄みわたる空と海",
+      "duration": 174,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "最も澄みわたる空と海" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/06%20%E6%9C%80%E3%82%82%E6%BE%84%E3%81%BF%E3%82%8F%E3%81%9F%E3%82%8B%E7%A9%BA%E3%81%A8%E6%B5%B7.flac"
+    },
+    {
+      "title": "G Free",
+      "duration": 202,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "G Free" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/07%20G%20Free.flac"
+    },
+    {
+      "title": "大空魔術",
+      "duration": 202,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "大空魔術 ～ Magical Astronomy" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/08%20%E5%A4%A7%E7%A9%BA%E9%AD%94%E8%A1%93.flac"
+    },
+    {
+      "title": "向こう側の月",
+      "duration": 201,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "パポス", "原曲": "向こう側の月" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0021/09%20%E5%90%91%E3%81%93%E3%81%86%E5%81%B4%E3%81%AE%E6%9C%88.flac"
+    }
+  ]
+}

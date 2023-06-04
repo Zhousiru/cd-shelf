@@ -1,0 +1,75 @@
+{
+  "name": "第3幕 協奏曲「華鳥風月」 SIDE A",
+  "id": "yhst-0076",
+  "publisher": "幽閉少女ActiveNEETs",
+  "year": 2017,
+  "meta": ["购于骏河屋"],
+  "cover": "",
+  "color": "",
+  "intro": "",
+  "track": [
+    {
+      "title": "華鳥風月(Vocal version)",
+      "duration": 351,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "いんどなめこ",
+        "演唱": "senya",
+        "作词": "かませ虎",
+        "原曲": "六十年目の東方裁判 ～ Fate of Sixty Years 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "HEAVEN(Orchestral version)",
+      "duration": 317,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "いんどなめこ", "原曲": "ルーネイトエルフ" },
+      "source": ""
+    },
+    {
+      "title": "鳥居の向こうの夢蒔絵(Vocal version)",
+      "duration": 249,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "いんどなめこ",
+        "演唱": "senya",
+        "作词": "奥山ナマリ",
+        "原曲": "U.N.オーエンは彼女なのか？ 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "緋色(Orchestral version)",
+      "duration": 243,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "いんどなめこ", "原曲": "亡き王女の為のセプテット" },
+      "source": ""
+    },
+    {
+      "title": "悠久の月に照らされて(Vocal version)",
+      "duration": 265,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "いんどなめこ",
+        "演唱": "柚木梨沙",
+        "作词": "かませ虎",
+        "原曲": "竹取飛翔 ～ Lunatic Princess 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "夜ノ花～凪～(Orchestral version)",
+      "duration": 246,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "いんどなめこ", "原曲": "フラワリングナイト" },
+      "source": ""
+    }
+  ]
+}

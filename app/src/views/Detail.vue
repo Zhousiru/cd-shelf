@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
-import Navbar from '../components/Navbar.vue'
-import { gridContentWidth } from '../providers'
+import DetailSection from '@/components/DetailSection.vue'
+import LoadingScreen from '@/components/LoadingScreen.vue'
+import Navbar from '@/components/Navbar.vue'
+import TrackList from '@/components/TrackList.vue'
+import { Album, getAlbumDetail } from '@/data'
+import { gridContentWidth } from '@/providers'
+import { usePlayerStore } from '@/stores/player'
 import { PlayArrowRound } from '@vicons/material'
 import { Icon } from '@vicons/utils'
-import DetailSection from '../components/DetailSection.vue'
-import TrackList from '../components/TrackList.vue'
-import type { Album } from '../data'
-import { getData } from '../data'
+import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { usePlayerStore } from '../stores/player'
 
 const playerStore = usePlayerStore()
 
@@ -53,7 +53,8 @@ onUnmounted(() => {
   }
 })
 
-const albumData = ref<Album>()
+const albumData = ref<Album | null>(null)
+const albumNameSize = ref(10)
 
 const playingIndex = computed(() => {
   if (playerStore.playInfo.albumId === albumData.value?.id) {
@@ -70,15 +71,23 @@ const route = useRoute()
 
 onMounted(async () => {
   const { id } = <{ id: string }>route.params
-  albumData.value = (await getData()).find((el) => el.id === id)
-  if (!albumData.value) {
-    alert('debug: 404')
-    return
+  albumData.value = await getAlbumDetail(id)
+
+  const partials = albumData.value.name.split(' ')
+  for (const partial of partials) {
+    const asciiLen = (partial.match(/[\x00-\x7F]/g) || []).length
+    const otherLen = partial.length - asciiLen
+    const len = 100 / (otherLen + 0.5 * asciiLen)
+
+    if (len < albumNameSize.value) {
+      albumNameSize.value = len
+    }
   }
 })
 </script>
 
 <template>
+  <LoadingScreen dark :done="albumData !== null" />
   <div class="background">
     <div class="cover"></div>
     <div class="overlay"></div>
@@ -111,7 +120,7 @@ onMounted(async () => {
           <div v-html="albumData?.intro" class="intro-content"></div>
         </DetailSection>
         <TrackList
-          color="rgb(207, 66, 22)"
+          :color="albumData?.color"
           :playing="playingIndex"
           :data="albumData?.track ?? []"
           @play="handlePlay"
@@ -137,8 +146,8 @@ onMounted(async () => {
 </template>
 
 <style scoped lang="scss">
-@import '../styles/grid.scss';
-@import '../styles/button.scss';
+@import '@/styles/grid.scss';
+@import '@/styles/button.scss';
 
 $navbar-gap: 80px;
 $grid-row-gap: 2rem;
@@ -240,7 +249,7 @@ $normal-cover-size: 350px;
 
   h1 {
     color: rgba(255, 255, 255, 0.9);
-    font-size: clamp(4rem, 12cqi, 8rem);
+    font-size: clamp(3rem, v-bind('albumNameSize + "cqi"'), 8rem);
     font-weight: 400;
   }
 
@@ -319,13 +328,13 @@ $normal-cover-size: 350px;
 .detail {
   margin-top: calc($navbar-gap - $grid-row-gap);
   grid-column: 2;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 15vh;
 
   @media (max-width: $breakpoint-lg) {
+    justify-self: center;
     width: v-bind('navWidth + "px"');
     grid-column: 1 / -1;
   }

@@ -1,0 +1,123 @@
+{
+  "name": "IGNITION DANCEHALL",
+  "id": "arcd-0054",
+  "publisher": "Alstroemeria Records",
+  "year": 2016,
+  "meta": ["购于淘宝", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/cover.jpg",
+  "color": "#813447",
+  "intro": "",
+  "track": [
+    {
+      "title": "Ignition",
+      "duration": 90,
+      "star": false,
+      "comment": "",
+      "meta": { "作曲": "Masayoshi Minoshima" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/01%20Masayoshi%20Minoshima%20-%20Ignition.flac"
+    },
+    {
+      "title": "Beautiful Sky",
+      "duration": 228,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "坂上なち",
+        "作词": "綾倉盟",
+        "原曲": "U.N.オーエンは彼女なのか？"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/02%20nachi%20-%20Beautiful%20Sky.flac"
+    },
+    {
+      "title": "missing pages",
+      "duration": 285,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "ayame",
+        "作词": "ayame",
+        "原曲": "Tabula rasa ～ 空白少女"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/03%20ayame%20-%20missing%20pages.flac"
+    },
+    {
+      "title": "A_Loops_Z",
+      "duration": 285,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Syrufit",
+        "演唱": "mican*",
+        "作词": "Kazumi Mogi",
+        "原曲": "神さびた古戦場 ～ Suwa Foughten Field"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/04%20micanx%20-%20A_Loops_Z.flac"
+    },
+    {
+      "title": "Dream Again",
+      "duration": 240,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "かめりあ",
+        "演唱": "綾倉盟",
+        "作词": "かめりあ",
+        "原曲": "the Last Judgement"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/05%20Mei%20Ayakura%20-%20Dream%20Again.flac"
+    },
+    {
+      "title": "Apparition Mountain",
+      "duration": 270,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Tracy", "原曲": "妖怪の山 ～ Mysterious Mountain" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/06%20Tracy%20-%20Apparition%20Mountain.flac"
+    },
+    {
+      "title": "Don't Lose",
+      "duration": 285,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "綾倉盟",
+        "原曲": "亡き王女の為のセプテット"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/07%20nomico%20-%20Don%27t%20Lose.flac"
+    },
+    {
+      "title": "Score",
+      "duration": 209,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Optimistic", "原曲": "プレイヤーズスコア" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/08%20Masayoshi%20Minoshima%20-%20Score.flac"
+    },
+    {
+      "title": "Eyes of Truth(ALR REMIX)",
+      "duration": 249,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "溝口ゆうま",
+        "再编曲": "Masayoshi Minoshima",
+        "演唱": "KUMI(ヲタみん)",
+        "作词": "溝口ゆうま",
+        "原曲": "ラストリモート 等"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/09%20Kumi%28%E3%83%B2%E3%82%BF%E3%81%BF%E3%82%93%29%20-%20Eyes%20of%20Truth%28ALR%20REMIX%29.flac"
+    },
+    {
+      "title": "Kokytos",
+      "duration": 246,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Nardis", "原曲": "メイプルワイズ" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/arcd-0054/10%20Nardis%20-%20Kokytos.flac"
+    }
+  ]
+}

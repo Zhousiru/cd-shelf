@@ -1,0 +1,111 @@
+{
+  "name": "晴雲秋月",
+  "id": "srtf-0009",
+  "publisher": "Sound Refil",
+  "year": 2015,
+  "meta": ["购于骏河屋", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/cover.jpg",
+  "color": "#e24321",
+  "intro": "<p>好耶！是 Sound Refil 的和风专！<br>封面椛椛可爱得很呐 (*/ω＼*)</p><p>底封可以看出椛椛右手牵着河童</p>",
+  "track": [
+    {
+      "title": "祭祀継承",
+      "duration": 197,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "たくろす", "原曲": "封印されし神々" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/01%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E7%A5%AD%E7%A5%80%E7%B6%99%E6%89%BF.flac"
+    },
+    {
+      "title": "佐渡ノ化狸",
+      "duration": 281,
+      "star": true,
+      "comment": "<p>也是一首节奏感很强的佐渡的二岩，人声结尾不太自然，不过影响不大。</p>",
+      "meta": { "编曲": "たくろす", "原曲": "佐渡の二ッ岩" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/02%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E4%BD%90%E6%B8%A1%E3%83%8E%E5%8C%96%E7%8B%B8.flac"
+    },
+    {
+      "title": "驚天動地",
+      "duration": 256,
+      "star": true,
+      "comment": "<p>第 34 秒顿挫的鼓点停止，紧接着钢琴领起小伞的主旋律，很惊艳。</p>",
+      "meta": { "编曲": "たくろす", "原曲": "万年置き傘にご注意を" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/03%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E9%A9%9A%E5%A4%A9%E5%8B%95%E5%9C%B0.flac"
+    },
+    {
+      "title": "追想",
+      "duration": 284,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "たくろす",
+        "演唱": "秣本瑳羅",
+        "作词": "秣本瑳羅",
+        "原曲": "フォールオブフォール ～ 秋めく滝"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/04%20%E7%A7%A3%E6%9C%AC%E7%91%B3%E7%BD%97%20-%20%E8%BF%BD%E6%83%B3.flac"
+    },
+    {
+      "title": "幻想節",
+      "duration": 209,
+      "star": false,
+      "comment": "<p>是一首快节奏的众神眷恋的幻想乡。</p>",
+      "meta": { "编曲": "SHiNKA", "原曲": "神々が恋した幻想郷" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/05%20SHiNKA%20-%20%E5%B9%BB%E6%83%B3%E7%AF%80.flac"
+    },
+    {
+      "title": "河童ノ輪舞曲",
+      "duration": 239,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "たくろす",
+        "演唱": "めらみぽっぷ",
+        "作词": "たくろす",
+        "原曲": "芥川龍之介の河童 ～ Candid Friend"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/06%20%E3%82%81%E3%82%89%E3%81%BF%E3%81%BD%E3%81%A3%E3%81%B7%20-%20%E6%B2%B3%E7%AB%A5%E3%83%8E%E8%BC%AA%E8%88%9E%E6%9B%B2.flac"
+    },
+    {
+      "title": "桜舞祭",
+      "duration": 293,
+      "star": false,
+      "comment": "<p>1:07 的衔接好棒！不过到后面感觉稍稍有点杂。</p><p>原曲：<br>さくらさくら ～ Japanize Dream...<br>神さびた古戦場 ～ Suwa Foughten Field<br>明日ハレの日、ケの昨日<br>神々が恋した幻想郷<br>華のさかづき大江山</p>",
+      "meta": {
+        "编曲": "たくろす",
+        "原曲": "さくらさくら ～ Japanize Dream... 等"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/07%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E6%A1%9C%E8%88%9E%E7%A5%AD.flac"
+    },
+    {
+      "title": "花信風",
+      "duration": 227,
+      "star": true,
+      "comment": "<p>到这一首突然就舒缓下来了呢。</p><p>还是一如既往地喜欢漉餡的编曲风格，太鼓重叠的声音给人如梦似幻的感觉。</p>",
+      "meta": { "编曲": "漉餡", "原曲": "広有射怪鳥事 ～ Till When?" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/08%20%E6%BC%89%E9%A4%A1%20-%20%E8%8A%B1%E4%BF%A1%E9%A2%A8.flac"
+    },
+    {
+      "title": "追想(instrument)",
+      "duration": 284,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "たくろす",
+        "原曲": "フォールオブフォール ～ 秋めく滝"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/09%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E8%BF%BD%E6%83%B3%20%EF%BD%9Einstrumental.flac"
+    },
+    {
+      "title": "河童ノ輪舞曲(instrument)",
+      "duration": 239,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "たくろす",
+        "原曲": "芥川龍之介の河童 ～ Candid Friend"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/10%20%E3%81%9F%E3%81%8F%E3%82%8D%E3%81%99%20-%20%E6%B2%B3%E7%AB%A5%E3%83%8E%E8%BC%AA%E8%88%9E%E6%9B%B2%20%EF%BD%9Einstrumental.flac"
+    }
+  ]
+}

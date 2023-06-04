@@ -1,0 +1,119 @@
+{
+  "name": "東方シンフォニック・ベスト",
+  "id": "mtcd-0029",
+  "publisher": "Melodic Taste",
+  "year": 2019,
+  "meta": ["购于 Melonbooks"],
+  "cover": "",
+  "color": "",
+  "intro": "",
+  "track": [
+    {
+      "title": "輝く針の小人族",
+      "duration": 239,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "輝く針の小人族 ～ Little Princess" },
+      "source": ""
+    },
+    {
+      "title": "序曲～幻想郷へよおこそ～",
+      "duration": 98,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "神々が恋した幻想郷 等" },
+      "source": ""
+    },
+    {
+      "title": "東方萃夢想",
+      "duration": 219,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "みなも", "原曲": "東方萃夢想" },
+      "source": ""
+    },
+    {
+      "title": "館の想い人",
+      "duration": 207,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "ラクトガール ～ 少女密室 等" },
+      "source": ""
+    },
+    {
+      "title": "U.N.オーエンは彼女なのか？",
+      "duration": 200,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "U.N.オーエンは彼女なのか？" },
+      "source": ""
+    },
+    {
+      "title": "ラストリモート",
+      "duration": 267,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "あいざわ, taste", "原曲": "ラストリモート" },
+      "source": ""
+    },
+    {
+      "title": "時は超えるもの",
+      "duration": 198,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "月時計 ～ ルナ・ダイアル 等" },
+      "source": ""
+    },
+    {
+      "title": "絢爛たる追撃",
+      "duration": 249,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "ネクロファンタジア" },
+      "source": ""
+    },
+    {
+      "title": "千年幻想交響祭",
+      "duration": 292,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "taste", "原曲": "千年幻想郷 ～ History of the Moon" },
+      "source": ""
+    },
+    {
+      "title": "東方緋想天",
+      "duration": 278,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "みなも", "原曲": "東方緋想天" },
+      "source": ""
+    },
+    {
+      "title": "エリニュエスの純心",
+      "duration": 280,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "パポス", "原曲": "ピュアヒューリーズ ～ 心の在処" },
+      "source": ""
+    },
+    {
+      "title": "東方妖々夢メドレー",
+      "duration": 449,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "パポス",
+        "原曲": "さくらさくら ～ Japanize Dream... 等"
+      },
+      "source": ""
+    },
+    {
+      "title": "メイガスナイト",
+      "duration": 226,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "パポス", "原曲": "メイガスナイト" },
+      "source": ""
+    }
+  ]
+}

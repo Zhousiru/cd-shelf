@@ -1,0 +1,84 @@
+{
+  "name": "Reincarnation-新生-",
+  "id": "rmdc-0009",
+  "publisher": "流派未階堂",
+  "year": 2016,
+  "meta": ["购于骏河屋", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/cover.jpg",
+  "color": "#5d883d",
+  "intro": "",
+  "track": [
+    {
+      "title": "東の果ての物語",
+      "duration": 173,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "テーマ・オブ・イースタンストーリー" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/01%20%E6%9D%B1%E3%81%AE%E6%9E%9C%E3%81%A6%E3%81%AE%E7%89%A9%E8%AA%9E.flac"
+    },
+    {
+      "title": "梶の葉まつり",
+      "duration": 256,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "ネイティブフェイス" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/02%20%E6%A2%B6%E3%81%AE%E8%91%89%E3%81%BE%E3%81%A4%E3%82%8A.flac"
+    },
+    {
+      "title": "紅い舞踏靴",
+      "duration": 242,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "U.N.オーエンは彼女なのか？" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/03%20%E7%B4%85%E3%81%84%E8%88%9E%E8%B8%8F%E9%9D%B4.flac"
+    },
+    {
+      "title": "雪降る夜の行進",
+      "duration": 189,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "亡き王女の為のセプテット" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/04%20%E9%9B%AA%E9%99%8D%E3%82%8B%E5%A4%9C%E3%81%AE%E8%A1%8C%E9%80%B2.flac"
+    },
+    {
+      "title": "炎星の孤独",
+      "duration": 234,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "ハルトマンの妖怪少女" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/05%20%E7%82%8E%E6%98%9F%E3%81%AE%E5%AD%A4%E7%8B%AC.flac"
+    },
+    {
+      "title": "Awakened",
+      "duration": 199,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "少女さとり ～ 3rd eye" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/06%20Awakened.flac"
+    },
+    {
+      "title": "邪鬼王の鬼遣らい",
+      "duration": 196,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "リバースイデオロギー" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/07%20%E9%82%AA%E9%AC%BC%E7%8E%8B%E3%81%AE%E9%AC%BC%E9%81%A3%E3%82%89%E3%81%84.flac"
+    },
+    {
+      "title": "小さな法師の大きな決意",
+      "duration": 219,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "輝く針の小人族 ～ Little Princess" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/08%20%E5%B0%8F%E3%81%95%E3%81%AA%E6%B3%95%E5%B8%AB%E3%81%AE%E5%A4%A7%E3%81%8D%E3%81%AA%E6%B1%BA%E6%84%8F.flac"
+    },
+    {
+      "title": "風のゆくえ",
+      "duration": 261,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Crawk", "原曲": "少女が見た日本の原風景" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/rmdc-0009/09%20%E9%A2%A8%E3%81%AE%E3%82%86%E3%81%8F%E3%81%88.flac"
+    }
+  ]
+}

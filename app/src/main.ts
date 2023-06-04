@@ -5,10 +5,10 @@ import { createPinia } from 'pinia'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-import routes from './routes'
+import routes from '@/routes'
 
-import App from './App.vue'
-import './style.scss'
+import App from '@/App.vue'
+import '@/style.scss'
 import 'normalize.css'
 
 const app = createApp(App)

@@ -1,0 +1,166 @@
+{
+  "name": "EXSERENS",
+  "id": "arcd-0024",
+  "publisher": "Alstroemeria Records",
+  "year": 2008,
+  "meta": ["购于骏河屋"],
+  "cover": "",
+  "color": "",
+  "intro": "",
+  "track": [
+    {
+      "title": "Bad Apple!!",
+      "duration": 319,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "Haruka",
+        "原曲": "Bad Apple!!"
+      },
+      "source": ""
+    },
+    {
+      "title": "Dark Road",
+      "duration": 380,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "美里",
+        "作词": "Haruka",
+        "原曲": "厄神様の通り道 ～ Dark Road"
+      },
+      "source": ""
+    },
+    {
+      "title": "Crystallize Silver",
+      "duration": 375,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "ayaka*",
+        "原曲": "クリスタライズシルバー"
+      },
+      "source": ""
+    },
+    {
+      "title": "Dreaming",
+      "duration": 355,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "Haruka",
+        "原曲": "少女綺想曲 ～ Dream Battle"
+      },
+      "source": ""
+    },
+    {
+      "title": "Eighteen Four",
+      "duration": 280,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "美里",
+        "作词": "Haruka",
+        "原曲": "明治十七年の上海アリス"
+      },
+      "source": ""
+    },
+    {
+      "title": "Dolls",
+      "duration": 326,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "作曲": "Masayoshi Minoshima",
+        "演唱": "美里",
+        "作词": "Haruka"
+      }
+    },
+    {
+      "title": "Shinto Shrine",
+      "duration": 447,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "三澤秋",
+        "作词": "三澤秋",
+        "原曲": "神社"
+      },
+      "source": ""
+    },
+    {
+      "title": "Shanhai Alice in 1884",
+      "duration": 317,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "ayaka*",
+        "原曲": "明治十七年の上海アリス"
+      },
+      "source": ""
+    },
+    {
+      "title": "Voile, the Magic Library",
+      "duration": 380,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "三澤秋",
+        "作词": "Haruka",
+        "原曲": "ヴワル魔法図書館"
+      },
+      "source": ""
+    },
+    {
+      "title": "Scolded By The Princess",
+      "duration": 546,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "三澤秋",
+        "作词": "Haruka",
+        "原曲": "稲田姫様に叱られるから"
+      },
+      "source": ""
+    },
+    {
+      "title": "Alice Maestera",
+      "duration": 368,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "Haruka",
+        "原曲": "アリスマエステラ"
+      },
+      "source": ""
+    },
+    {
+      "title": "The Last Judgement",
+      "duration": 454,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "Haruka",
+        "原曲": "the Last Judgement"
+      },
+      "source": ""
+    }
+  ]
+}

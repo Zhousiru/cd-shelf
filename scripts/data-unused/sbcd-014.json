@@ -1,0 +1,116 @@
+{
+  "name": "エイセイパレード",
+  "id": "sbcd-014",
+  "publisher": "森羅万象",
+  "year": 2019,
+  "meta": ["购于囧仙子通販"],
+  "cover": "",
+  "color": "",
+  "intro": "",
+  "track": [
+    {
+      "title": "Ring Sky Core",
+      "duration": 265,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora, ハム",
+        "演唱": "あやぽんず＊，あよ",
+        "作词": "ACTRock",
+        "原曲": "妖怪の山 ～ Mysterious Mountain"
+      },
+      "source": ""
+    },
+    {
+      "title": "ランシンゼンシン",
+      "duration": 199,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora",
+        "演唱": "あやぽんず＊",
+        "作词": "kaztora, ACTRock, Caral",
+        "原曲": "華のさかづき大江山"
+      },
+      "source": ""
+    },
+    {
+      "title": "コウフクアイロニー",
+      "duration": 236,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora",
+        "演唱": "あやぽんず＊",
+        "作词": "kaztora",
+        "原曲": "お宇佐さまの素い幡"
+      },
+      "source": ""
+    },
+    {
+      "title": "タイムパラドックス",
+      "duration": 270,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora",
+        "演唱": "あよ",
+        "作词": "ACTRock",
+        "原曲": "秘境のマーメイド"
+      },
+      "source": ""
+    },
+    {
+      "title": "ふわ。",
+      "duration": 231,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora, かめ",
+        "演唱": "あやぽんず＊",
+        "作词": "Caral",
+        "原曲": "竹取飛翔 ～ Lunatic Princess"
+      },
+      "source": ""
+    },
+    {
+      "title": "三妖精SAY YA!!!",
+      "duration": 254,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora, waoru",
+        "演唱": "あやぽんず＊，あよ",
+        "作词": "ACTRock",
+        "原曲": "春の氷精"
+      },
+      "source": ""
+    },
+    {
+      "title": "贋作",
+      "duration": 273,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora",
+        "演唱": "あよ",
+        "作词": "azuki",
+        "原曲": "ヴワル魔法図書館"
+      },
+      "source": ""
+    },
+    {
+      "title": "至極普通のアークライト",
+      "duration": 240,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "kaztora",
+        "演唱": "あよ",
+        "作词": "An",
+        "原曲": "星の器 ～ Casket of Star/恋色マスタースパーク"
+      },
+      "source": ""
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 <script setup lang="ts">
+import { Album } from '@/data'
+import { gridContentWidth } from '@/providers'
+import { usePlayerStore } from '@/stores/player'
 import {
+  PauseRound,
   PlayArrowRound,
   SkipNextRound,
   SkipPreviousRound,
-  PauseRound,
 } from '@vicons/material'
 import { Icon } from '@vicons/utils'
 import { inject, onMounted, ref, watch } from 'vue'
-import { Album, getData } from '../data'
-import { gridContentWidth } from '../providers'
-import { usePlayerStore } from '../stores/player'
 
-const { dark } = withDefaults(
+const props = withDefaults(
   defineProps<{
     dark?: boolean
   }>(),
@@ -41,12 +41,10 @@ function hidePlayer() {
   }, 250)
 }
 
-const playingAlbumData = ref<Album>()
+const playingAlbumData = ref<Album | null>()
 
 async function getPlayingData() {
-  playingAlbumData.value = (await getData()).find(
-    (album) => album.id === playerStore.playInfo.albumId
-  )
+  playingAlbumData.value = await playerStore.albumData
 }
 
 watch(() => playerStore.playInfo, getPlayingData, { deep: true })
@@ -55,7 +53,7 @@ onMounted(getPlayingData)
 </script>
 
 <template>
-  <div class="navbar-wrapper" :class="{ dark }">
+  <div class="navbar-wrapper" :class="{ dark: props.dark }">
     <div
       class="overlay"
       :class="{ visible: playerVisibility }"

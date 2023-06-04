@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import CDCase from '@/components/CDCase.vue'
+import LoadingScreen from '@/components/LoadingScreen.vue'
+import Navbar from '@/components/Navbar.vue'
+import { Index, getIndex } from '@/data'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import CDCase from '../components/CDCase.vue'
-import Navbar from '../components/Navbar.vue'
-import { getData } from '../data'
-import type { Data } from '../data'
 
 const router = useRouter()
 
@@ -17,20 +17,20 @@ function handleCDClick(cdID: string) {
   })
 }
 
-const data = ref<Data>()
+const items = ref<Array<Index> | null>(null)
 
 onMounted(async () => {
-  data.value = await getData()
+  items.value = await getIndex()
 })
 </script>
 
 <template>
+  <LoadingScreen :done="items !== null" />
   <div class="container">
     <Navbar />
     <div class="grid-container">
-      <!-- Debug Data -->
       <CDCase
-        v-for="album in data"
+        v-for="album in items"
         :album-art="album.cover"
         @click="handleCDClick(album.id)"
       />
@@ -39,7 +39,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-@import '../styles/grid.scss';
+@import '@/styles/grid.scss';
 
 .container {
   min-height: 100vh;

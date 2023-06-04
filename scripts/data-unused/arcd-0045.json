@@ -1,0 +1,128 @@
+{
+  "name": "FLASHLIGHT",
+  "id": "arcd-0045",
+  "publisher": "Alstroemeria Records",
+  "year": 2014,
+  "meta": ["购于骏河屋"],
+  "cover": "",
+  "color": "",
+  "intro": "",
+  "track": [
+    {
+      "title": "FLASHLIGHT",
+      "duration": 45,
+      "star": false,
+      "comment": "",
+      "meta": { "作曲": "Masayoshi Minoshima" },
+      "source": ""
+    },
+    {
+      "title": "PUNISHMENT",
+      "duration": 277,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "nachi",
+        "作词": "Haruka",
+        "原曲": "時の風"
+      },
+      "source": ""
+    },
+    {
+      "title": "WITCHCRAFT",
+      "duration": 355,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "Mei Ayakura",
+        "作词": "Haruka",
+        "原曲": "非統一魔法世界論"
+      },
+      "source": ""
+    },
+    {
+      "title": "potential curve",
+      "duration": 280,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Camellia", "原曲": "運命のダークサイド" },
+      "source": ""
+    },
+    {
+      "title": "Hell's Sun",
+      "duration": 275,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "Nhato", "原曲": "霊知の太陽信仰 ～ Nuclear Fusion" },
+      "source": ""
+    },
+    {
+      "title": "EDGE",
+      "duration": 290,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "mican*",
+        "作词": "Haruka",
+        "原曲": "世界の果て ～ World's End"
+      },
+      "source": ""
+    },
+    {
+      "title": "BLACK EYES",
+      "duration": 296,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Tracy",
+        "演唱": "築山さえ",
+        "作词": "築山さえ",
+        "原曲": "天狗が見ている ～ Black Eyes"
+      },
+      "source": ""
+    },
+    {
+      "title": "DREAMS OF LOST",
+      "duration": 306,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "演唱": "ayame",
+        "作词": "Haruka",
+        "原曲": "お宇佐さまの素い幡"
+      },
+      "source": ""
+    },
+    {
+      "title": "Bad Apple!! feat.nomico(2014 Refix)",
+      "duration": 319,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "再编曲": "Masayoshi Minoshima",
+        "演唱": "nomico",
+        "作词": "Haruka",
+        "原曲": "Bad Apple!!"
+      },
+      "source": ""
+    },
+    {
+      "title": "End Of Daylight(REDALiCE Remix)",
+      "duration": 325,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "Masayoshi Minoshima",
+        "再编曲": "REDALiCE",
+        "演唱": "坂上なち",
+        "作词": "Haruka",
+        "原曲": "End of Daylight"
+      }
+    }
+  ]
+}

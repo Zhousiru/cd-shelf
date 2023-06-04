@@ -1,29 +1,24 @@
 <script setup lang="ts">
+import type { Album, Track } from '@/data'
+import { usePlayerStore } from '@/stores/player'
 import { watch } from 'vue'
-import { getData } from '../data'
-import type { Album, Track } from '../data'
-import { usePlayerStore } from '../stores/player'
 
 const playerStore = usePlayerStore()
 
 const audio = new Audio()
 
 navigator.mediaSession.setActionHandler('previoustrack', () => {
-  console.log('MS: Previous')
   playerStore.next(-1)
 })
 navigator.mediaSession.setActionHandler('nexttrack', () => {
-  console.log('MS: Next')
   playerStore.next(1)
 })
 
 navigator.mediaSession.setActionHandler('play', () => {
-  console.log('MS: Play')
   playerStore.isPlaying = true
 })
 
 navigator.mediaSession.setActionHandler('pause', () => {
-  console.log('MS: Pause')
   playerStore.isPlaying = false
 })
 
@@ -35,7 +30,12 @@ navigator.mediaSession.setActionHandler('stop', () => {
   }
 })
 
-function setMetadata(albumData: Album, trackData: Track) {
+function setMetadata(albumData: Album | null, trackData: Track) {
+  if (!albumData) {
+    navigator.mediaSession.metadata = null
+    return
+  }
+
   navigator.mediaSession.metadata = new MediaMetadata({
     title: trackData.title,
     artist: albumData.publisher,
@@ -55,7 +55,6 @@ audio.addEventListener('ended', () => {
 watch(
   () => playerStore.isPlaying,
   async () => {
-    console.log(playerStore.isPlaying ? 'Playing' : 'Paused')
     if (playerStore.isPlaying) {
       audio.play()
     } else {
@@ -67,20 +66,15 @@ watch(
 watch(
   () => playerStore.playInfo,
   async () => {
-    console.log('Play info changed:', playerStore.playInfo)
-
-    const albumData = (await getData()).find(
-      (album) => album.id === playerStore.playInfo.albumId
-    )
-
-    if (!albumData) {
+    if (!playerStore.albumData) {
       return
     }
-
-    const track = albumData.track[playerStore.playInfo.trackIndex]
+    const data = await playerStore.albumData
+    const track = data.track[playerStore.playInfo.trackIndex]
 
     audio.src = track.source
-    audio.play().then(() => setMetadata(albumData, track))
+    await audio.play()
+    setMetadata(data, track)
   },
   { deep: true }
 )

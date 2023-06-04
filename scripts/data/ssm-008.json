@@ -1,0 +1,60 @@
+{
+  "name": "暑中見舞",
+  "id": "ssm-008",
+  "publisher": "ししまいブラザーズ",
+  "year": 2009,
+  "meta": ["购于骏河屋", "无损抓轨"],
+  "cover": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/cover.jpg",
+  "color": "#acc682",
+  "intro": "",
+  "track": [
+    {
+      "title": "急々如律令",
+      "duration": 173,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "ししまい三号",
+        "原曲": "封じられた妖怪 ～ Lost Place"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/01%20%E3%81%97%E3%81%97%E3%81%BE%E3%81%84%E4%B8%89%E5%8F%B7%28DauGe%29%20-%20%E6%80%A5%E3%80%85%E5%A6%82%E5%BE%8B%E4%BB%A4.flac"
+    },
+    {
+      "title": "少女達の夏祭り",
+      "duration": 232,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "ししまい三号", "原曲": "魔法少女達の百年祭" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/02%20%E3%81%97%E3%81%97%E3%81%BE%E3%81%84%E4%B8%89%E5%8F%B7%28DauGe%29%20-%20%E5%B0%91%E5%A5%B3%E9%81%94%E3%81%AE%E5%A4%8F%E7%A5%AD%E3%82%8A.flac"
+    },
+    {
+      "title": "迎え火",
+      "duration": 228,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "ししまい三号", "原曲": "業火マントル" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/03%20%E3%81%97%E3%81%97%E3%81%BE%E3%81%84%E4%B8%89%E5%8F%B7%28DauGe%29%20-%20%E8%BF%8E%E3%81%88%E7%81%AB.flac"
+    },
+    {
+      "title": "おてんば娘の初恋",
+      "duration": 198,
+      "star": false,
+      "comment": "",
+      "meta": { "编曲": "ししまい三号", "原曲": "おてんば恋娘" },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/04%20%E3%81%97%E3%81%97%E3%81%BE%E3%81%84%E4%B8%89%E5%8F%B7%28DauGe%29%20-%20%E3%81%8A%E3%81%A6%E3%82%93%E3%81%B0%E5%A8%98%E3%81%AE%E5%88%9D%E6%81%8B.flac"
+    },
+    {
+      "title": "送り火",
+      "duration": 296,
+      "star": false,
+      "comment": "",
+      "meta": {
+        "编曲": "ししまい三号",
+        "演唱": "NAKI",
+        "作词": "ししまい三号",
+        "原曲": "神は恵みの雨を降らす ～ Sylphid Dream"
+      },
+      "source": "https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/05%20Vo.%20NAKI%20%2C%20%E3%81%97%E3%81%97%E3%81%BE%E3%81%843%E5%8F%B7%28Dauge%29%20-%20%E9%80%81%E3%82%8A%E7%81%AB.flac"
+    }
+  ]
+}
