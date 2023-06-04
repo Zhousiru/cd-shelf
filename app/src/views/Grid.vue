@@ -33,12 +33,13 @@ onMounted(async () => {
         v-for="album in items"
         :album-art="album.cover"
         @click="handleCDClick(album.id)"
+        role="link"
       />
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 @import '@/styles/grid.scss';
 
 .container {
@@ -52,5 +53,9 @@ onMounted(async () => {
 
 .grid-container {
   margin-top: 80px;
+
+  > * {
+    cursor: pointer;
+  }
 }
 </style>
