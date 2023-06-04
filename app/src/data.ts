@@ -27,14 +27,14 @@ export type Track = {
 }
 
 export async function getIndex(): Promise<Array<Index>> {
-  const res = await fetch('/data/index.json', { cache: 'force-cache' })
+  const res = await fetch('/data/index.json')
   const resText = await res.text()
 
   return JSON.parse(resText)
 }
 
 export async function getAlbumDetail(id: string): Promise<Album> {
-  const res = await fetch(`/data/${id}.json`, { cache: 'force-cache' })
+  const res = await fetch(`/data/${id}.json`)
   const resText = await res.text()
 
   return JSON.parse(resText)
