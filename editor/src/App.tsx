@@ -58,10 +58,10 @@ function App() {
           <CardBody display="flex" alignItems="center" gap="1rem">
             <Button
               onClick={handleOpenDirectory}
-              colorScheme="blue"
-              variant={directoryHandle && "outline"}
+              colorScheme={directoryName ? "gray" : "blue"}
+              variant="solid"
             >
-              {directoryHandle ? "Change Directory" : "Open Directory"}
+              {directoryName ? "Change Directory" : "Open Directory"}
             </Button>
             {directoryName ? (
               <Text>
