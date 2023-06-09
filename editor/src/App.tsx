@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
+import AlbumEditor from "./components/AlbumEditor";
 import AlbumList from "./components/AlbumList";
 import { AlbumFileItem } from "./type";
 
@@ -47,7 +48,7 @@ function App() {
   return (
     <>
       <Container
-        maxW={1800}
+        maxW={1600}
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -94,7 +95,22 @@ function App() {
               </CardBody>
             </Card>
             <Card flex={1}>
-              <CardBody>{activeAlbum ?? "No active album."}</CardBody>
+              <CardBody display="flex" h="100%">
+                {activeAlbum ? (
+                  <AlbumEditor
+                    data={
+                      (
+                        albumItems.find(
+                          (item) => item.filename === activeAlbum
+                        ) as AlbumFileItem
+                      ).data
+                    }
+                    onSave={(newData) => console.log(newData)}
+                  />
+                ) : (
+                  "No active album."
+                )}
+              </CardBody>
             </Card>
           </Flex>
         )}
