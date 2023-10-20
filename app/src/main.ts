@@ -1,6 +1,6 @@
+import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import { createPinia } from 'pinia'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -16,6 +16,13 @@ const app = createApp(App)
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
 
 NProgress.configure({ showSpinner: false })
