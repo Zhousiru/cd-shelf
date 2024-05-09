@@ -14,7 +14,7 @@ export function CoverWithCase({
     <div className="[perspective:1000px]">
       <div
         className={cn(
-          'group relative aspect-square translate-y-2 transition hover:[transform:rotateX(5deg)]',
+          'group relative aspect-square translate-y-2 select-none transition hover:[transform:rotateX(5deg)]',
           className,
         )}
         {...props}
@@ -24,14 +24,14 @@ export function CoverWithCase({
             src={src}
             alt="Case shadow"
             fill
-            className="scale-90 rounded-[50px] opacity-75 blur-3xl transition group-hover:translate-y-4"
+            className="pointer-events-none scale-90 rounded-[50px] opacity-75 blur-3xl transition group-hover:translate-y-4"
           />
           <Image
             src={src}
             alt="CD cover shadow"
             fill
             aria-hidden
-            className="translate-y-[0.5%] object-cover blur-sm"
+            className="pointer-events-none translate-y-[0.5%] object-cover blur-sm"
           />
           <Image
             src={src}
@@ -39,14 +39,14 @@ export function CoverWithCase({
             fill
             className="rounded-sm object-cover transition"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-0 mix-blend-lighten transition group-hover:opacity-15" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-0 mix-blend-lighten transition group-hover:opacity-15" />
         </div>
         <Image
           src={caseMaskImage}
           alt="CD crystal case"
           fill
           aria-hidden
-          className="mix-blend-multiply transition group-hover:brightness-110"
+          className="pointer-events-none mix-blend-multiply transition group-hover:brightness-110"
         />
       </div>
     </div>
