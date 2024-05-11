@@ -1,3 +1,5 @@
+import '@/assets/fonts/AlibabaPuHuiTi-3-55-Regular/index.css'
+import '@/assets/fonts/AlibabaSansJP-Regular/index.css'
 import type { Metadata } from 'next'
 import './globals.css'
 
