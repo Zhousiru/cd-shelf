@@ -1,5 +1,3 @@
-import '@/assets/fonts/AlibabaPuHuiTi-3-55-Regular/index.css'
-import '@/assets/fonts/AlibabaSansJP-Regular/index.css'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -14,6 +12,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   )

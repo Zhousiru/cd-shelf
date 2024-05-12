@@ -4,7 +4,6 @@
 
 @layer base {
   html {
-    font-family: 'Alibaba PuHuiTi 3.0 55 Regular', 'Alibaba Sans JP', system-ui,
-      sans-serif;
+    font-family: 'Noto Sans SC', 'Noto Sans JP', system-ui, sans-serif;
   }
 }

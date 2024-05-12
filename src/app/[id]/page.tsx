@@ -1,5 +1,7 @@
+import { AutoSizingText } from '@/components/auto-sizing-text'
 import { BlurryBackground } from '@/components/blurry-background'
 import { Album } from '@/types/album'
+import { IconPlayerPlay } from '@tabler/icons-react'
 import Image from 'next/image'
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -14,12 +16,19 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div className="relative aspect-square w-[350px] overflow-hidden rounded-lg shadow-2xl">
           <Image src={album.cover} alt="Album cover" fill />
         </div>
-        <div className="flex flex-col justify-center gap-8">
+        <div className="flex flex-col justify-center gap-4">
           <div className="text-white">
-            <h1 className="text-6xl">{album.name}</h1>
-            <h2 className="text-3xl">{album.publisher}</h2>
+            <AutoSizingText className="font-medium" text={album.name} />
+            <h2 className="text-4xl">{album.publisher}</h2>
           </div>
-          <button className="grid h-12 w-36 place-items-center rounded-full border bg-white transition hover:opacity-75"></button>
+          <div className="flex gap-2 text-white opacity-75">
+            {album.meta.map((v) => (
+              <span key={v}>{v}</span>
+            ))}
+          </div>
+          <button className="grid h-12 w-36 place-items-center rounded-full border bg-white transition hover:opacity-75">
+            <IconPlayerPlay />
+          </button>
         </div>
       </div>
     </>
