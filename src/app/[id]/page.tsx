@@ -1,5 +1,10 @@
-import { AutoSizingText } from '@/components/auto-sizing-text'
+import { AutoSizingTitle } from '@/components/auto-sizing-title'
 import { BlurryBackground } from '@/components/blurry-background'
+import {
+  DetailSection,
+  DetailSectionContent,
+  DetailSectionTitle,
+} from '@/components/detail-section'
 import { Album } from '@/types/album'
 import { IconPlayerPlay } from '@tabler/icons-react'
 import Image from 'next/image'
@@ -18,11 +23,8 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
         <div className="flex flex-col justify-center gap-4">
           <div className="text-white">
-            <AutoSizingText
-              className="font-medium leading-tight"
-              text={album.name}
-            />
-            <h2 className="text-2xl">{album.publisher}</h2>
+            <AutoSizingTitle text={album.name} />
+            <h2 className="text-3xl">{album.publisher}</h2>
           </div>
           <div className="flex gap-2 text-white opacity-75">
             {album.meta.map((v) => (
@@ -34,8 +36,13 @@ export default async function Page({ params }: { params: { id: string } }) {
           </button>
         </div>
 
-        <div className="w-full justify-self-center bg-white/25 lg:col-span-2 lg:max-w-screen-md xl:col-start-2 xl:justify-self-start">
-          Test
+        <div className="w-full justify-self-center lg:col-span-2 lg:max-w-screen-md xl:col-start-2 xl:justify-self-start">
+          <DetailSection>
+            <DetailSectionTitle>Intro</DetailSectionTitle>
+            <DetailSectionContent
+              dangerouslySetInnerHTML={{ __html: album.intro ?? '' }}
+            />
+          </DetailSection>
         </div>
       </div>
     </>

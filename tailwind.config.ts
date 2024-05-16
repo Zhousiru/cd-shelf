@@ -1,4 +1,5 @@
 import containerQueriesPlugin from '@tailwindcss/container-queries'
+import typographyPlugin from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -8,6 +9,6 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {},
-  plugins: [containerQueriesPlugin],
+  plugins: [containerQueriesPlugin, typographyPlugin],
 }
 export default config
