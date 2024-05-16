@@ -19,7 +19,7 @@ export function CoverWithCase({
   return (
     <div
       className={cn(
-        'group relative aspect-square translate-y-2 select-none transition hover:[transform:rotateX(5deg)]',
+        'group relative aspect-square translate-y-2 select-none transition will-change-transform [transform-style:preserve-3d] hover:[transform:rotateX(5deg)]',
         className,
       )}
       {...props}

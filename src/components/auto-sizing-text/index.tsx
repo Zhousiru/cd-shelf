@@ -10,7 +10,7 @@ export function AutoSizingText({
 
   return (
     <div className={cn('@container', className)} {...props}>
-      <div style={{ fontSize: `clamp(3rem, ${100 / (width / 2)}cqi, 8rem)` }}>
+      <div style={{ fontSize: `clamp(2.5rem, ${100 / (width / 2)}cqi, 8rem)` }}>
         {text}
       </div>
     </div>

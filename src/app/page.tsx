@@ -1,6 +1,8 @@
 import { CoverWithCase } from '@/components/cover-with-case'
 import { MainContainer } from '@/components/main-container'
+import { MainHeader } from '@/components/main-header'
 import { AlbumIndexEntry } from '@/types/album'
+import Link from 'next/link'
 
 export default async function Home() {
   const cdIndex: AlbumIndexEntry[] = await (
@@ -8,10 +10,19 @@ export default async function Home() {
   ).json()
 
   return (
-    <MainContainer className="[perspective:2400px]">
-      <CoverWithCase src="https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/srtf-0009/cover.jpg" />
-      <CoverWithCase src="https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/mtcd-0022/cover.jpg" />
-      <CoverWithCase src="https://cd-1253266055.cos.ap-guangzhou.myqcloud.com/ssm-008/cover.jpg" />
-    </MainContainer>
+    <>
+      <MainHeader />
+      <MainContainer className="[perspective:2400px]">
+        {cdIndex.map((v) => (
+          <Link
+            key={v.id}
+            href={`/${v.id}`}
+            className="block [transform-style:preserve-3d]"
+          >
+            <CoverWithCase src={v.cover} />
+          </Link>
+        ))}
+      </MainContainer>
+    </>
   )
 }
